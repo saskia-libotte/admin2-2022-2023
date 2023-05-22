@@ -1,6 +1,22 @@
 version: "3.8"
 
 services:
+public_resolver:
+    container_name: 'public_resolver'
+    build:
+      context: ./reseau_externe/resolver
+      dockerfile: Dockerfile
+    ports:
+      - 53:53/udp
+      - 53:53/tcp
+  public_web:
+    container_name: 'public_web'
+    build:
+      context: ./reseau_externe/web
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+      - 443:443
   resolver:
     container_name: 'resolver'
     build: ./reseau_interne/resolver
