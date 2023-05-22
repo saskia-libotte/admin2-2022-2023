@@ -1,7 +1,7 @@
 version: "3.8"
 
 services:
-public_resolver:
+  public_resolver:
     container_name: 'public_resolver'
     build:
       context: ./reseau_externe/resolver
