@@ -44,21 +44,21 @@ services:
     networks:
       secure_zone:
         ipv4_address: 192.168.0.4
-  client_1:
+  client_simon:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.10.3\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
     container_name: simon
     networks:
       secure_zone:
-        ipv4_address: 192.168.0.0
-  client_2:
+        ipv4_address: 192.168.0.2
+  client_pauline:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.10.3\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
     container_name: pauline
     networks:
       secure_zone:
         ipv4_address: 192.168.0.1
-  client_2:
+  client_saskia:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.10.3\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
     container_name: saskia
