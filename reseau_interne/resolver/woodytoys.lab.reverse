@@ -9,6 +9,6 @@ $TTL 86400
 
      IN     NS     ns.woodytoys.lab.
 
-3    IN     PTR    ns.woodytoys.lab.
-3    IN     PTR    resolver.woodytoys.lab.
-4    IN     PTR    www.woodytoys.lab.
+1    IN     PTR    ns.woodytoys.lab.
+1    IN     PTR    resolver.woodytoys.lab.
+2    IN     PTR    www.woodytoys.lab.
