@@ -1,5 +1,11 @@
+# Définit l'origine par défaut pour les noms de domaine de cette zone.
+
 $ORIGIN woodytoys.lab.
+
+# Définit la durée de vie par défaut
 $TTL 86400
+
+spécifie le nom du serveur primaire && l'adresse e-mail de la personne responsable
 @     IN     SOA    soa.woodytoys.lab.    simon.woodytoys.lab. (
                     2001062501 ; serial
                     21600      ; refresh after 6 hours
