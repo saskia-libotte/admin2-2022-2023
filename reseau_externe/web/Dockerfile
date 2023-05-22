@@ -10,8 +10,8 @@ COPY ./sites/ /var/www/
 
 COPY ./config/ports.conf /etc/apache2/
 COPY ./config/apache2.conf /etc/apache2/
-COPY ./config/virtualhosting/b2b.conf /etc/apache2/sites-available/
-COPY ./config/virtualhosting/vitrine.conf /etc/apache2/sites-available/
+COPY ./config/virtualhost/b2b.conf /etc/apache2/sites-available/
+COPY ./config/virtualhost/vitrine.conf /etc/apache2/sites-available/
 
 
 
