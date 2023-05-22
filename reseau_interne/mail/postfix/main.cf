@@ -1,0 +1,14 @@
+myhostname = mail.woodytoys.lab
+mydomain = woodytoys.lab
+
+myorigin = $mydomain
+mydestination = $myhostname localhost.$mydomain localhost $mydomain
+
+smtpd_banner = $myhostname ESMTP $mail_name
+
+mynetworks = 192.168.0.0/24 127.0.0.0/8 [::1]/128
+smtpd_relay_restrictions = permit_mynetworks, reject
+
+maillog_file=/var/log/postfix.log
+#debug_peer_list = woodytoys.lab
+#debug_peer_level = 5
