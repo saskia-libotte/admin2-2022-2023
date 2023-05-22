@@ -1,14 +1,14 @@
-$ORIGIN 2tm-mes-2.ephec-ti.be.
+$ORIGIN mmes-2.ephec-ti.be.
 $TTL    3600
-@   IN  SOA ns.2tm-mes-2.ephec-ti.be.   simon.2tm-mes-2.ephec-ti.be. (
+@   IN  SOA ns.mmes-2.ephec-ti.be.   simon.mmes-2.ephec-ti.be. (
         2022061457 ; serial
         21600      ; refresh after 6 hours
         3600       ; retry after 1 hour
         1814000    ; expire after 3 weeks
         86400 )    ; minimum TTL of 1 day
 
-; Nom de serveur faisant autorité sur le domaine 2tm-mes-2.ephec-ti.be.
-@      IN      NS      ns.2tm-mes-2.ephec-ti.be.
+; Nom de serveur faisant autorité sur le domaine mmes-2.ephec-ti.be.
+@      IN      NS      ns.mmes-2.ephec-ti.be.
 
 ; Le nom de mon serveur assigné à son IP
 ns     IN  A   167.172.108.210
@@ -21,4 +21,4 @@ www    IN  A   167.172.108.210
 
 ; Server Mail
 mail   IN  A   167.172.108.210
-@      IN  MX  10  mail.2tm-mes-2.ephec-ti.be.
+@      IN  MX  10  mail.mmes-2.ephec-ti.be.
