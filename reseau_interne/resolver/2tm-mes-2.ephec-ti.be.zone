@@ -11,13 +11,13 @@ $TTL    3600
 @      IN      NS      ns.2tm-mes-2.ephec-ti.be.
 
 ; Le nom de mon serveur assigné à son IP
-ns     IN  A   167.172.108.210
-@      IN  A   167.172.108.210
+ns     IN  A   64.226.124.140
+@      IN  A   64.226.124.140
 
 ; Server Web
-b2b    IN  A   167.172.108.210
-www    IN  A   167.172.108.210
+b2b    IN  A   64.226.124.140
+www    IN  A   64.226.124.140
 
 ; Server Mail
-mail   IN  A   167.172.108.210
+mail   IN  A   64.226.124.140
 @      IN  MX  10  mail.2tm-mes-2.ephec-ti.be.
