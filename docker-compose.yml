@@ -9,7 +9,7 @@ services:
       - 53/tcp
     networks:
       secure_zone:
-        ipv4_address: 192.168.10.3
+        ipv4_address: 192.168.0.1
   web:
     container_name: 'web'
     build: ./reseau_interne/web
@@ -20,7 +20,7 @@ services:
       - 443
     networks:
       secure_zone:
-        ipv4_address: 192.168.10.4
+        ipv4_address: 192.168.0.2
   db:
     container_name: 'db'
     build: ./reseau_interne/db
@@ -32,7 +32,7 @@ services:
       - 3306:3306
     networks:
       secure_zone:
-        ipv4_address: 192.168.10.5
+        ipv4_address: 192.168.0.3
   mail:
     container_name: 'mail'
     build: ./reseau_interne/mail
@@ -50,21 +50,21 @@ services:
     container_name: simon
     networks:
       secure_zone:
-        ipv4_address: 192.168.0.2
+        ipv4_address: 192.168.0.200
   client_pauline:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.10.3\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
     container_name: pauline
     networks:
       secure_zone:
-        ipv4_address: 192.168.0.1
+        ipv4_address: 192.168.0.201
   client_saskia:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.10.3\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
     container_name: saskia
     networks:
       secure_zone:
-        ipv4_address: 192.168.0.3
+        ipv4_address: 192.168.0.202
 volumes:
   db-data:
 networks:
@@ -72,5 +72,5 @@ networks:
     ipam:
       driver: default
       config: 
-        - subnet: 192.168.10.0/16
+        - subnet: 192.168.0.0/16
           gateway: 192.168.254.254
