@@ -9,6 +9,6 @@ ENV MYSQL_ROOT_PASSWORD=user123
 
 COPY data.sql /docker-entrypoint-initdb.d/data.sql
 
-EXPOSE 3306
+EXPOSE 3307
 
 CMD ["mysqld"]

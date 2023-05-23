@@ -27,9 +27,9 @@ services:
     volumes:
       - db-data:/var/lib/mysql
     expose:
-      - 3306
+      - 3307
     ports:
-      - 3306:3306
+      - 3307:3307
     networks:
       secure_zone:
         ipv4_address: 192.168.0.3
