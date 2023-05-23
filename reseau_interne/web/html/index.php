@@ -7,9 +7,9 @@
     <table>
       <thead>
         <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Price</th>
+          <th>Produit</th>
+          <th>quantités</th>
+          <th>Prix</th>
         </tr>
       </thead>
       <tbody>
