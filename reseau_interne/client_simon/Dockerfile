@@ -7,6 +7,5 @@ RUN apt -y install links nano sudo dnsutils iputils-ping telnet mutt
 
 RUN adduser simon && echo "simon:simon" | chpasswd
 
-COPY .muttrc /home/simon/.muttrc
 
 CMD ["sleep", "infinity"]
