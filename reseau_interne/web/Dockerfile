@@ -3,7 +3,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND=noninteractive 
 
 RUN apt-get update && \
-    apt-get install -y apache2 php libapache2-mod-php php-mysql && \
+    apt-get install -y apache2 php libapache2-mod-php php-mysqli && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
