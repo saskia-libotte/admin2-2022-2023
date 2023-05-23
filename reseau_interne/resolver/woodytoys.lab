@@ -15,6 +15,6 @@ spécifie le nom du serveur primaire && l'adresse e-mail de la personne responsa
 
       IN     NS     ns.woodytoys.lab.
 
-ns           IN     A       192.168.10.3
-resolver     IN     A       192.168.10.3
-www          IN     A       192.168.10.4
+ns           IN     A       192.168.10.1
+resolver     IN     A       192.168.10.1
+www          IN     A       192.168.10.2
