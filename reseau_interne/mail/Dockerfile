@@ -8,8 +8,10 @@ RUN apt-get install -y postfix dovecot-pop3d dovecot-imapd
 COPY dovecot /etc/dovecot
 COPY postfix /etc/postfix
 
-RUN adduser nathan && echo "nathan:nathan" | chpasswd
-RUN adduser francois && echo "francois:francois" | chpasswd
+RUN adduser simon && echo "simon:simon" | chpasswd
+RUN adduser pauline && echo "pauline:pauline" | chpasswd
+RUN adduser saskia && echo "saskia:saskia" | chpasswd
+
 
 EXPOSE 25 143 587 993
 
