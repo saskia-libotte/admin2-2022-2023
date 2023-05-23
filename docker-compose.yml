@@ -33,17 +33,6 @@ services:
     networks:
       secure_zone:
         ipv4_address: 192.168.0.3
-  mail:
-    container_name: 'mail'
-    build: ./reseau_interne/mail
-    expose:
-      - 25
-      - 143
-      - 587
-      - 993
-    networks:
-      secure_zone:
-        ipv4_address: 192.168.0.4
   client_simon:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.0.1\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
