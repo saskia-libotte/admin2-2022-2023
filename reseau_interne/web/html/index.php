@@ -32,9 +32,9 @@
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
               echo "<tr>";
-              echo "<td>" . $row["Product"] . "</td>";
-              echo "<td>" . $row["Quantity"] . "</td>";
-              echo "<td>" . $row["Price"] . "</td>";
+              echo "<td>" . $row["Produit"] . "</td>";
+              echo "<td>" . $row["Quantite"] . "</td>";
+              echo "<td>" . $row["Prix"] . "</td>";
               echo "</tr>";
             }
           }
