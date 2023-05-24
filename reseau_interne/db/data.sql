@@ -1,28 +1,28 @@
--- DROP TABLE IF EXISTS `Products`;
+-- MySQL dump 10.13  Distrib 8.0.26, for Linux (x86_64)
+-- DROP TABLE IF EXISTS Customers;
+/*!40101 SET @saved_cs_client = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 
--- CREATE TABLE `Products` (
---   `Produit` varchar(255) DEFAULT NULL,
---   `Quantite` int(11) DEFAULT NULL,
---   `Prix` int(11) DEFAULT NULL
--- );
+-- Créer la base de données
+CREATE DATABASE IF NOT EXISTS db;
+USE db;
 
--- INSERT INTO `Products` (`Produit`, `Quantite`, `Prix`) VALUES
--- ('Voiture', 20, 200),
--- ('Poupee', 30, 300),
--- ('train', 40, 400),
--- ('serpent', 50, 500);
-
-DROP TABLE IF EXISTS `Customers`;
-
-CREATE TABLE `Customers` (
-  `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Nom` varchar(255) DEFAULT NULL,
-  `Email` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`ID`)
+-- Créer la table
+CREATE TABLE IF NOT EXISTS customers (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  price FLOAT(10, 2) NOT NULL
 );
 
-INSERT INTO `Customers` (`Nom`, `Email`) VALUES
-('Jean Dupont', 'jean.dupont@example.com'),
-('Marie Lambert', 'marie.lambert@example.com'),
-('Pierre Leclerc', 'pierre.leclerc@example.com'),
-('Sophie Martin', 'sophie.martin@example.com');
+-- Insérer des données dans la table
+INSERT INTO customers (name, price) VALUES
+  ('PS5', 11.50),
+  ('Balancoire', 5.36),
+  ('Dames', 9.99);
+
+-- Créer un utilisateur pour accéder à la base de données
+CREATE USER IF NOT EXISTS 'userdb'@'%' IDENTIFIED BY 'Zh0qtDbBRiKsmX4V8dES';
+
+-- Accorder tous les privilèges à l'utilisateur sur la base de données
+GRANT ALL PRIVILEGES ON db.* TO 'userdb'@'%';
+

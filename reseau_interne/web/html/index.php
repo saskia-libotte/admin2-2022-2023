@@ -7,47 +7,49 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Nom</th>
-          <th>Email</th>
+          <th>Name</th>
+          <th>Price</th>
+          
         </tr>
       </thead>
       <tbody>
+        <?php echo 'Bienvenue sur le site de Woodytoys !'; ?>
+
         <?php
-        mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-        try {
-          // Connect to the database
-          $conn = new MySQLi('192.168.0.3', 'root', 'user123');
+          // Connexion à la base de données
+          $servername = "192.168.0.3";
+          $username = "root";
+          $password = "user123";
+          $dbname = "woodytoys";
 
-          // Select the database
-          $conn->select_db('woodytoys');
+          $conn = new MySQLi($servername, $username, $password, $dbname);
 
-          // Query the Customers table
-          $sql = "SELECT * FROM Customers";
-          $stmt = $conn->prepare($sql);
-          $stmt->execute();
-          $result = $stmt->get_result();
-
-          // Output each row as a table row
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              echo "<tr>";
-              echo "<td>" . $row["ID"] . "</td>";
-              echo "<td>" . $row["Nom"] . "</td>";
-              echo "<td>" . $row["Email"] . "</td>";
-              echo "</tr>";
-            }
-          } else {
-            echo "<tr><td colspan='3'>Aucun enregistrement trouvé</td></tr>";
+          // Vérification de la connexion
+          if ($conn->connect_error) {
+            die("The connection failed: " . $conn->connect_error);
           }
 
-          // Close the database connection
+          // Récupération des données de la table "customers"
+          $sql = "SELECT * FROM customers";
+          $result = $conn->query($sql);
+
+          // Affichage des données dans un tableau HTML
+          if ($result->num_rows > 0) {
+            echo "<table>";
+            echo "<tr><th>ID</th><th>Nom</th><th>Prix</th></tr>";
+            while($row = $result->fetch_assoc()) {
+              echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td></tr>";
+            }
+            echo "</table>";
+          } else {
+            echo "0 résultats";
+          }
+
+          // Fermeture de la connexion
           $conn->close();
-        } catch (Exception $e) {
-          echo "Erreur de connexion à la base de données : " . $e->getMessage();
-        }
-        ?>
+          ?>
+
       </tbody>
     </table>
   </body>
