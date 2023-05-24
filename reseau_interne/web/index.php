@@ -4,9 +4,9 @@
 
 // Connexion à la base de données
 $servername = "192.168.0.3";
-$username = "roott";
-$password = "roott";
-$dbname = "dbname";
+$username = "root";
+$password = "root";
+$dbname = "dbadmin";
 
 $conn = new MySQLi($servername, $username, $password, $dbname);
 
