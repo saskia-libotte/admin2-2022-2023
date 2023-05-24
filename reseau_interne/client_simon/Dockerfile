@@ -1,11 +1,19 @@
 FROM ubuntu:latest
 
-LABEL group="2tm-mes-2"
 
-RUN apt -y update
-RUN apt -y install links nano sudo dnsutils iputils-ping telnet mutt
+RUN apt update -y
+RUN apt install net-tools -y
+RUN apt install nano -y
+RUN apt install iputils-ping -y
+RUN apt install traceroute -y
+RUN apt install dnsutils -y
+RUN apt install links -y
+RUN apt install tcpdump -y
+RUN apt install mutt -y
 
-RUN adduser simon && echo "simon:simon" | chpasswd
+RUN useradd -m -p simon simon
 
+USER simon
 
-CMD ["sleep", "infinity"]
+ENTRYPOINT ["tail"] 
+CMD ["-f","/dev/null"]
