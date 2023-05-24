@@ -48,32 +48,32 @@ services:
     hostname: soa
 
 
-    client_simon:
-      build: ./reseau_interne/client_simon
-      networks:
-        default:
-          ipv4_address: 192.168.0.200
-      container_name: simon
-      hostname: simon
-      dns: 192.168.0.1
+  client_simon:
+    build: ./reseau_interne/client_simon
+    networks:
+      default:
+        ipv4_address: 192.168.0.200
+    container_name: simon
+    hostname: simon
+    dns: 192.168.0.1
 
-    client_pauline:
-      build: ./reseau_interne/client_pauline
-      networks:
-        default:
-          ipv4_address: 192.168.0.201
-      container_name: pauline
-      hostname: pauline
-      dns: 192.168.0.1
-    
-    client_saskia:
-      build: ./reseau_interne/client_saskia
-      networks:
-        default:
-          ipv4_address: 192.168.0.202
-      container_name: saskia
-      hostname: saskia
-      dns: 192.168.0.1
+  client_pauline:
+    build: ./reseau_interne/client_pauline
+    networks:
+      default:
+        ipv4_address: 192.168.0.201
+    container_name: pauline
+    hostname: pauline
+    dns: 192.168.0.1
+  
+  client_saskia:
+    build: ./reseau_interne/client_saskia
+    networks:
+      default:
+        ipv4_address: 192.168.0.202
+    container_name: saskia
+    hostname: saskia
+    dns: 192.168.0.1
 
 volumes:
   db-data:
