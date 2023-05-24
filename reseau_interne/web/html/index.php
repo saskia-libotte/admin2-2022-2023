@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Product</title>
+    <title>Marchand</title>
   </head>
   <body>
     <table>
       <thead>
         <tr>
-          <th>Produit</th>
-          <th>quantités</th>
-          <th>Prix</th>
+          <th>ID</th>
+          <th>Nom</th>
+          <th>Email</th>
         </tr>
       </thead>
       <tbody>
@@ -26,17 +26,17 @@
             }
             echo "Connected successfully";
             
-          // Query the Products table
-          $sql = "SELECT * FROM Products";
+          // Query the Customers table
+          $sql = "SELECT * FROM Customers";
           $result = $conn->query($sql);
 
           // Output each row as a table row
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
               echo "<tr>";
-              echo "<td>" . $row["Produit"] . "</td>";
-              echo "<td>" . $row["Quantite"] . "</td>";
-              echo "<td>" . $row["Prix"] . "</td>";
+              echo "<td>" . $row["ID"] . "</td>";
+              echo "<td>" . $row["Nom"] . "</td>";
+              echo "<td>" . $row["Email"] . "</td>";
               echo "</tr>";
             }
           }
