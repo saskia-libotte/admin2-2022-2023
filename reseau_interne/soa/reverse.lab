@@ -1,0 +1,15 @@
+$ORIGIN 0.168.192.in-addr.arpa.
+$TTL 86400
+@     IN     SOA    soa.woodytoys.lab.     hostmaster.woodytoys.lab. (
+                    2001062501 ; serial
+                    21600      ; refresh after 6 hours
+                    3600       ; retry after 1 hour
+                    604800     ; expire after 1 week
+                    86400 )    ; minimum TTL of 1 day
+
+        IN      NS      soa.woodytoys.lab.
+
+1       IN      PTR     resolver.woodytoys.lab.
+5       IN      PTR     soa.woodytoys.lab.
+2       IN      PTR     www.woodytoys.lab.
+3       IN      PTR     db.woodytoys.lab.
