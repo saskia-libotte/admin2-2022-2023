@@ -66,14 +66,7 @@ services:
     hostname: pauline
     dns: 192.168.0.1
   
-  client_saskia:
-    build: ./reseau_interne/client_saskia
-    networks:
-      default:
-        ipv4_address: 192.168.0.202
-    container_name: saskia
-    hostname: saskia
-    dns: 192.168.0.1
+
 
 volumes:
   db-data:
