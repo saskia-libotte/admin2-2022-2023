@@ -4,8 +4,8 @@
 /*!50503 SET character_set_client = utf8mb4 */;
 
 -- Créer la base de données
-CREATE DATABASE IF NOT EXISTS db;
-USE db;
+CREATE DATABASE IF NOT EXISTS dbadmin;
+USE dbadmin;
 
 -- Créer la table
 CREATE TABLE IF NOT EXISTS inventory (
@@ -16,14 +16,14 @@ CREATE TABLE IF NOT EXISTS inventory (
 
 -- Insérer des données dans la table
 INSERT INTO inventory (name, price) VALUES
-  ('PS5', 11.50),
-  ('Balancoire', 5.36),
-  ('Dames', 9.99);
+  ('peluche', 11.50),
+  ('voiture', 5.36),
+  ('echec', 9.99);
 
 -- Créer un utilisateur pour accéder à la base de données
 CREATE USER IF NOT EXISTS 'userdb'@'%' IDENTIFIED BY 'Zh0qtDbBRiKsmX4V8dES';
 
 -- Accorder tous les privilèges à l'utilisateur sur la base de données
-GRANT ALL PRIVILEGES ON db.* TO 'userdb'@'%';
+GRANT ALL PRIVILEGES ON dbadmin.* TO 'userdb'@'%';
 
 

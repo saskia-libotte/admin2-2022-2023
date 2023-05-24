@@ -9,26 +9,35 @@ networks:
         - subnet: 192.168.0.0/16
 
 services:
-  user1:
-    build: ./Intranet/employé1
+  simon:
+    build: ./reseau_interne/simon
     networks:
       default:
         ipv4_address: 192.168.0.200
-    container_name: user1
-    hostname: user1
+    container_name: simon
+    hostname: simon
     dns: 192.168.0.7
 
-  user2:
-    build: ./Intranet/employé2
+  pauline:
+    build: ./reseau_interne/pauline
     networks:
       default:
         ipv4_address: 192.168.0.201
-    container_name: user2
-    hostname: user2
+    container_name: pauline
+    hostname: pauline
+    dns: 192.168.0.7
+    
+  saskia:
+    build: ./reseau_interne/saskia
+    networks:
+      default:
+        ipv4_address: 192.168.0.202
+    container_name: saskia
+    hostname: saskia
     dns: 192.168.0.7
 
   resolver:
-    build: ./Intranet/resolver
+    build: ./reseau_interne/resolver
     networks:
       default:
         ipv4_address: 192.168.0.7
@@ -36,7 +45,7 @@ services:
     hostname: resolver
 
   soa:
-    build: ./Intranet/soa
+    build: ./reseau_interne/soa
     networks:
       default:
         ipv4_address: 192.168.0.4
@@ -44,7 +53,7 @@ services:
     hostname: soa 
 
   web:
-    build: ./Intranet/web
+    build: ./reseau_interne/web
     networks:
       default:
         ipv4_address: 192.168.0.2
@@ -57,7 +66,7 @@ services:
 
 
   db:
-    build: ./Intranet/DB
+    build: ./reseau_interne/DB
     networks:
       default:
         ipv4_address: 192.168.0.3
