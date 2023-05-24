@@ -18,7 +18,7 @@
 
           // Connect to the database
           //$conn = mysqli_connect('192.168.0.3', 'root', 'user123', 'woodytoys');
-          $conn = new MySQLi('192.168.0.3', 'root', 'user123');
+          $conn = new MySQLi('192.168.0.3', 'root', 'user123', 'woodytoys');
         
           // Check connection
           if ($conn -> connect_error) {;
