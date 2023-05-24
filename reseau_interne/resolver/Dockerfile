@@ -3,7 +3,6 @@ FROM ubuntu/bind9:latest
 LABEL group="2tm-mes-2"
 
 COPY named.conf /etc/bind/named.conf
-COPY woodytoys.lab /etc/bind/woodytoys.lab
 
 
 EXPOSE 53/udp
