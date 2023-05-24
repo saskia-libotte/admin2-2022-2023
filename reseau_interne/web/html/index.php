@@ -21,10 +21,11 @@
           $conn = new MySQLi('192.168.0.3', 'root', 'user123');
         
           // Check connection
-          if ($conn->connect_error) {
-            die("Connection failed: ".$conn->connect_error);
-          }
-
+          if ($conn -> connect_error) {;
+            echo "NOT Connected successfully";;
+            }
+            echo "Connected successfully";
+            
           // Query the Products table
           $sql = "SELECT * FROM Products";
           $result = $conn->query($sql);
@@ -41,7 +42,7 @@
           }
 
           // Close the database connection
-          $conn->close();
+          //$conn->close();
         ?>
       </tbody>
     </table>
