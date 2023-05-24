@@ -8,14 +8,14 @@ CREATE DATABASE IF NOT EXISTS db;
 USE db;
 
 -- Créer la table
-CREATE TABLE IF NOT EXISTS inventory (
+CREATE TABLE IF NOT EXISTS cadeau (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   price FLOAT(10, 2) NOT NULL
 );
 
 -- Insérer des données dans la table
-INSERT INTO inventory (name, price) VALUES
+INSERT INTO cadeau (name, price) VALUES
   ('peluche', 11.50),
   ('voiture', 5.36),
   ('echec', 9.99);

@@ -15,8 +15,8 @@ if ($conn->connect_error) {
   die("The connection failed: " . $conn->connect_error);
 }
 
-// Récupération des données de la table "inventory"
-$sql = "SELECT * FROM inventory";
+// Récupération des données de la table "cadeau"
+$sql = "SELECT * FROM cadeau";
 $result = $conn->query($sql);
 
 // Affichage des données dans un tableau HTML
