@@ -41,7 +41,7 @@ services:
       secure_zone:
         ipv4_address: 192.168.0.200
     dns: 192.168.0.1
-    tty: yes
+    tty: true
   client_pauline:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.0.1\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
@@ -50,7 +50,7 @@ services:
       secure_zone:
         ipv4_address: 192.168.0.201
     dns: 192.168.0.1
-    tty: yes
+    tty: true
   client_saskia:
     image: alpine
     command: ash -c "apk update && apk upgrade && apk add links lynx bind-tools busybox-extras mysql && echo -e 'search ephec.be\nnameserver 192.168.0.1\noptions edns0 trust-ad ndots:0' > /etc/resolv.conf && tail -f /dev/null"
@@ -59,7 +59,7 @@ services:
       secure_zone:
         ipv4_address: 192.168.0.202
     dns: 192.168.0.1
-    tty: yes
+    tty: true
 volumes:
   db-data:
 networks:
