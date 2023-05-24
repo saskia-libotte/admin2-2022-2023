@@ -4,8 +4,8 @@
 /*!50503 SET character_set_client = utf8mb4 */;
 
 -- Créer la base de données
-CREATE DATABASE IF NOT EXISTS db;
-USE db;
+CREATE DATABASE IF NOT EXISTS woodytoys;
+USE woodytoys;
 
 -- Créer la table
 CREATE TABLE IF NOT EXISTS customers (
@@ -24,5 +24,5 @@ INSERT INTO customers (name, price) VALUES
 CREATE USER IF NOT EXISTS 'userdb'@'%' IDENTIFIED BY 'Zh0qtDbBRiKsmX4V8dES';
 
 -- Accorder tous les privilèges à l'utilisateur sur la base de données
-GRANT ALL PRIVILEGES ON db.* TO 'userdb'@'%';
+GRANT ALL PRIVILEGES ON woodytoys.* TO 'userdb'@'%';
 
