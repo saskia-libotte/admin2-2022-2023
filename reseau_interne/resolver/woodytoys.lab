@@ -1,9 +1,6 @@
-
 $ORIGIN woodytoys.lab.
-
 $TTL 86400
-
-@     IN     SOA    soa.woodytoys.lab.    simon.woodytoys.lab. (
+@     IN     SOA    soa.woodytoys.lab.    nathan.woodytoys.lab. (
                     2001062501 ; serial
                     21600      ; refresh after 6 hours
                     3600       ; retry after 1 hour
