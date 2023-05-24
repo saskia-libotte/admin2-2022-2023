@@ -1,4 +1,4 @@
-<?php echo 'Bienvenue sur le site de Woodytoys !'; ?>
+<?php echo 'ENFIN après si longtemps :  Bienvenue sur le site de Woodytoys !'; ?>
 
 <?php
 
