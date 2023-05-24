@@ -6,7 +6,7 @@
 $servername = "192.168.0.3";
 $username = "roott";
 $password = "roott";
-$dbname = "db";
+$dbname = "dbname";
 
 $conn = new MySQLi($servername, $username, $password, $dbname);
 
