@@ -7,9 +7,9 @@
     <table>
       <thead>
         <tr>
-          <th>Produit</th>
-          <th>quantités</th>
-          <th>Prix</th>
+          <th>id</th>
+          <th>nom</th>
+          <th>mail</th>
         </tr>
       </thead>
       <tbody>
@@ -28,16 +28,16 @@
           $conn->select_db('woodytoys');
             
           // Query the Products table
-          $sql = "SELECT * FROM Products";
+          $sql = "SELECT * FROM Customers";
           $result = $conn->query($sql);
 
           // Output each row as a table row
           if ($result->num_rows > 0) {
             while($row = $result->fetch_assoc()) {
               echo "<tr>";
-              echo "<td>" . $row["Produit"] . "</td>";
-              echo "<td>" . $row["Quantite"] . "</td>";
-              echo "<td>" . $row["Prix"] . "</td>";
+              echo "<td>" . $row["ID"] . "</td>";
+              echo "<td>" . $row["Nom"] . "</td>";
+              echo "<td>" . $row["Mail"] . "</td>";
               echo "</tr>";
             }
           }
