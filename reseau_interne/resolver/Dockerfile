@@ -4,7 +4,6 @@ LABEL group="2tm-mes-2"
 
 COPY named.conf /etc/bind/named.conf
 COPY woodytoys.lab /etc/bind/woodytoys.lab
-COPY woodytoys.lab.reverse /etc/bind/woodytoys.lab.reverse
 
 
 EXPOSE 53/udp
