@@ -46,8 +46,7 @@ services:
         ipv4_address: 192.168.0.5
     container_name: soa
     hostname: soa
-
-
+    
   client_simon:
     build: ./reseau_interne/client_simon
     networks:
