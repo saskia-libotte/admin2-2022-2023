@@ -16,7 +16,7 @@ services:
         ipv4_address: 192.168.0.200
     container_name: user1
     hostname: user1
-    dns: 192.168.0.1
+    dns: 192.168.0.7
 
   user2:
     build: ./Intranet/employé2
@@ -25,13 +25,13 @@ services:
         ipv4_address: 192.168.0.201
     container_name: user2
     hostname: user2
-    dns: 192.168.0.1
+    dns: 192.168.0.7
 
   resolver:
     build: ./Intranet/resolver
     networks:
       default:
-        ipv4_address: 192.168.0.1
+        ipv4_address: 192.168.0.7
     container_name: resolver
     hostname: resolver
 
