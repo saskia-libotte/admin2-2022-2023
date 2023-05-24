@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Marchand</title>
+    <title>Product</title>
   </head>
   <body>
     <table>
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Nom</th>
-          <th>Email</th>
+          <th>id</th>
+          <th>nom</th>
+          <th>mail</th>
         </tr>
       </thead>
       <tbody>
@@ -18,35 +18,40 @@
 
         try {
           // Connect to the database
+          //$conn = mysqli_connect('192.168.0.3', 'root', 'user123', 'woodytoys');
           $conn = new MySQLi('192.168.0.3', 'root', 'user123');
 
-          // Select the database
-          $conn->select_db('woodytoys');
-
-          // Query the Customers table
-          $sql = "SELECT * FROM Customers";
-          $stmt = $conn->prepare($sql);
-          $stmt->execute();
-          $result = $stmt->get_result();
-
-          // Output each row as a table row
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              echo "<tr>";
-              echo "<td>" . $row["ID"] . "</td>";
-              echo "<td>" . $row["Nom"] . "</td>";
-              echo "<td>" . $row["Email"] . "</td>";
-              echo "</tr>";
-            }
+          // Check connection
+          if ($conn->connect_error) {
+              echo "Not connected successfully";
           } else {
-            echo "<tr><td colspan='3'>Aucun enregistrement trouvé</td></tr>";
-          }
+              echo "Connected successfully";
 
-          // Close the database connection
-          $conn->close();
-        } catch (Exception $e) {
-          echo "Erreur de connexion à la base de données : " . $e->getMessage();
-        }
+              // Select the database
+              $conn->select_db('woodytoys');
+
+              // Query the Customers table
+              $sql = "SELECT * FROM Customers";
+              $stmt = $conn->prepare($sql);
+              $stmt->execute();
+              $result = $stmt->get_result();
+
+              // Output each row as a table row
+              if ($result->num_rows > 0) {
+                  echo "<table>";
+                  while ($row = $result->fetch_assoc()) {
+                      echo "<tr>";
+                      echo "<td>" . $row["ID"] . "</td>";
+                      echo "<td>" . $row["Nom"] . "</td>";
+                      echo "<td>" . $row["Email"] . "</td>";
+                      echo "</tr>";
+                  }
+                  echo "</table>";
+              }
+
+              // Close the database connection
+              $conn->close();
+          }
         ?>
       </tbody>
     </table>
