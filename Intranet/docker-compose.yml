@@ -1,0 +1,66 @@
+version: '3'
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 192.168.0.0/16
+
+services:
+  user1:
+    build: ./Intranet/employé1
+    networks:
+      default:
+        ipv4_address: 192.168.0.200
+    container_name: user1
+    hostname: user1
+    dns: 192.168.0.1
+
+  user2:
+    build: ./Intranet/employé2
+    networks:
+      default:
+        ipv4_address: 192.168.0.201
+    container_name: user2
+    hostname: user2
+    dns: 192.168.0.1
+
+  resolver:
+    build: ./Intranet/resolver
+    networks:
+      default:
+        ipv4_address: 192.168.0.1
+    container_name: resolver
+    hostname: resolver
+
+  soa:
+    build: ./Intranet/soa
+    networks:
+      default:
+        ipv4_address: 192.168.0.4
+    container_name: soa
+    hostname: soa 
+
+  web:
+    build: ./Intranet/web
+    networks:
+      default:
+        ipv4_address: 192.168.0.2
+    container_name: web
+    hostname: web
+    dns: 192.168.0.4
+    depends_on: 
+      - db
+
+
+
+  db:
+    build: ./Intranet/DB
+    networks:
+      default:
+        ipv4_address: 192.168.0.3
+    container_name: db
+    hostname: db 
+    dns: 192.168.0.4

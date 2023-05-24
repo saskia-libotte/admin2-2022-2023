@@ -1,0 +1,115 @@
+version: '3'
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.20.1.0/24
+
+services:
+  user1:
+    build: ./Intranet/employé1
+    networks:
+      default:
+        ipv4_address: 172.20.1.7
+    container_name: user1
+    hostname: user1
+    dns: 172.20.1.2
+
+  user2:
+    build: ./Intranet/employé2
+    networks:
+      default:
+        ipv4_address: 172.20.1.8
+    container_name: user2
+    hostname: user2
+    dns: 172.20.1.2
+
+  resolver:
+    build: ./Intranet/resolver
+    networks:
+      default:
+        ipv4_address: 172.20.1.2
+    container_name: resolver
+    hostname: resolver
+
+  soa:
+    build: ./Intranet/soa
+    networks:
+      default:
+        ipv4_address: 172.20.1.3
+    container_name: soa
+    hostname: soa 
+
+  web:
+    build: ./Intranet/web
+    networks:
+      default:
+        ipv4_address: 172.20.1.4
+    container_name: web
+    hostname: web
+    dns: 172.20.1.3
+    depends_on: 
+      - db
+
+  mail:
+    build: ./Intranet/mail
+    networks:
+      default:
+        ipv4_address: 172.20.1.5
+    container_name: mail
+    hostname: mail 
+    dns: 172.20.1.3
+    environment: 
+      - maildomain=woodytoys.lab
+
+  db:
+    build: ./Intranet/DB
+    networks:
+      default:
+        ipv4_address: 172.20.1.6
+    container_name: db
+    hostname: db 
+    dns: 172.20.1.3
+
+  soa_public:
+    build: ./Public/ns
+    networks:
+      default:
+        ipv4_address: 172.20.1.9
+    ports:
+      - "193.70.112.34:53:53/tcp"
+      - "193.70.112.34:53:53/udp"
+    container_name: soa_public
+
+  web_public:
+    build: ./Public/web_public
+    networks:
+      default:
+        ipv4_address: 172.20.1.10
+    ports:
+      - "80:80"
+      - "443:443"
+    container_name: web_public
+    depends_on:
+      - db
+
+  mail_public:
+    build: ./Public/mail_public
+    networks:
+      default:
+        ipv4_address: 172.20.1.11
+    container_name: mail_public
+    hostname: mail 
+    dns: 172.20.1.3
+
+  user_public:
+    build: ./Public/user1_public
+    networks:
+      default:
+        ipv4_address: 172.20.1.12
+    container_name: user_public
+    hostname: user_public
+    dns: 172.20.1.3
