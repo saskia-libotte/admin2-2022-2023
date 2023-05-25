@@ -1,6 +1,6 @@
 $ORIGIN mmes-2.ephec-ti.be.
 $TTL 86400
-@     IN     SOA    mm2es-2.ephec-ti.be.     hostmaster.mmes-2.ephec-ti.be. (
+@     IN     SOA    ns.mmes-2.ephec-ti.be.     hostmaster.mmes-2.ephec-ti.be. (
                     2001062501 ; serial
                     21600      ; refresh after 6 hours
                     3600       ; retry after 1 hour
