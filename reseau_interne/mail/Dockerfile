@@ -14,4 +14,4 @@ RUN adduser saskia && echo "saskia:saskia" | chpasswd
 
 EXPOSE 25 143 110 587 993
 
-CMD service postfix start && service dovecot start && sleep infinity
+CMD service postfix start && service dovecot start && tail -f /dev/null
