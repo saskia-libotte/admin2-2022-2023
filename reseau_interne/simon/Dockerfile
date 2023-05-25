@@ -13,7 +13,7 @@ RUN apt install mutt -y
 
 RUN useradd -m -p simon simon
 
-COPY .muttrc /home/simon/.muttrc
+COPY .muttrc /home/simon/
 
 USER simon
 
