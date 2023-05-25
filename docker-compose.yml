@@ -89,8 +89,8 @@ services:
       default:
         ipv4_address: 192.168.0.9
     ports:
-      - 53:53/tcp
-      - 53:53/udp
+      - "209.38.227.83:53:53/tcp"
+      - "209.38.227.83:53:53/udp"
     container_name: soa_public
 
   web_public:
