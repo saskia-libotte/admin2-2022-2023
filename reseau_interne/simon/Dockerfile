@@ -13,6 +13,8 @@ RUN apt install mutt -y
 
 RUN useradd -m -p simon simon
 
+COPY .muttrc /home/simon/.muttrc
+
 USER simon
 
 ENTRYPOINT ["tail"] 

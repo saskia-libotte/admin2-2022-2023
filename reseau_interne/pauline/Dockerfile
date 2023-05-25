@@ -13,6 +13,8 @@ RUN apt install mutt -y
 
 RUN useradd -m -p pauline pauline
 
+COPY .muttrc /home/pauline/.muttrc
+
 USER pauline
 
 ENTRYPOINT ["tail"] 

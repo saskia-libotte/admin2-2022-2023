@@ -13,6 +13,7 @@ RUN apt install mutt -y
 
 RUN useradd -m -p saskia saskia
 
+COPY .muttrc /home/saskia/.muttrc
 USER saskia
 
 ENTRYPOINT ["tail"] 
