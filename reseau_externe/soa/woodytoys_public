@@ -1,0 +1,18 @@
+$ORIGIN 2tm-mes-2.ephec-ti.be.
+$TTL 86400
+@     IN     SOA    2tm-mes-2.ephec-ti.be.     hostmaster.2tm-mes-2.ephec-ti.be. (
+                    2001062501 ; serial
+                    21600      ; refresh after 6 hours
+                    3600       ; retry after 1 hour
+                    604800     ; expire after 1 week
+                    86400 )    ; minimum TTL of 1 day
+
+      IN     NS     2tm-mes-2.ephec-ti.be.
+
+      IN     MX     10    mail.2tm-mes-2ephec-ti.be.
+
+ns             IN     A       209.38.227.83
+www            IN     A       209.38.227.83
+b2b            IN     A       209.38.227.83
+mail           IN     A       209.38.227.83
+_B76F4D3B88EBB07671D699FC8764CEE7.2tm-mes-2.ephec-ti.be.      3600           IN     CNAME       52748A421BF27A796A931F3B000758A3.3E59AB3170B9EE42CD0D4C3F706037AA.2817a45839b0595.comodoca.com.

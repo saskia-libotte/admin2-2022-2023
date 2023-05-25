@@ -82,3 +82,25 @@ services:
     dns: 192.168.0.4
     environment: 
       - maildomain=woodytoys.lab
+
+  soa_public:
+    build: ./reseau_externe/soa
+    networks:
+      default:
+        ipv4_address: 192.168.0.9
+    ports:
+      - "193.70.112.34:53:53/tcp"
+      - "193.70.112.34:53:53/udp"
+    container_name: soa_public
+
+  web_public:
+    build: ./reseau_externe/web
+    networks:
+      default:
+        ipv4_address: 192.168.0.10
+    ports:
+      - "80:80"
+      - "443:443"
+    container_name: web_public
+    depends_on:
+      - db
