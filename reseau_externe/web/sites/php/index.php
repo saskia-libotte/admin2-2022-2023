@@ -21,11 +21,16 @@
     </form>
 
     <?php
+    $servername = "192.168.0.3";
+    $username = "root123";
+    $password = "root123";
+    $dbname = "db";
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     // Connect to the database
-    $conn = mysqli_connect('192.168.0.3', 'root123', 'root123', 'db');
+    $conn = new MySQLi($servername, $username, $password, $dbname);
     $sql = 'SELECT * FROM cadeau';
+    $result = $conn->query($sql);
 
     if ($result = $conn->query($sql)) {
         echo "<table><tr><th>Nos Produits</th><th>Prix</th><th>Quantité</th></tr>";
