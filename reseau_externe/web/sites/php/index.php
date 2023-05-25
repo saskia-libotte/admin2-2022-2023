@@ -29,22 +29,22 @@
 
     // Connect to the database
     $conn = new MySQLi($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("The connection failed: " . $conn->connect_error);
+      }
     $sql = 'SELECT * FROM cadeau';
     $result = $conn->query($sql);
 
-    if ($result = $conn->query($sql)) {
-        echo "<table><tr><th>Nos Produits</th><th>Prix</th><th>Quantité</th></tr>";
-        while ($data = $result->fetch_assoc()) {
-            echo "<tr><td>";
-            echo $data['id'];
-            echo "</td><td>";
-            echo $data['name'];
-            echo "</td><td>";
-            echo $data['price'];
-            echo "</td></tr>";
+    if ($result->num_rows > 0) {
+        echo "<table>";
+        echo "<tr><th>ID</th><th>Nom</th><th>Prix</th></tr>";
+        while($row = $result->fetch_assoc()) {
+          echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td></tr>";
         }
         echo "</table>";
-    }
+      } else {
+        echo "0 résultats";
+      }
 
     // Handle form submission for adding a toy
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nomDuProduit']) && isset($_POST['prixDuProduit']) && isset($_POST['quantiteDuProduit'])) {
