@@ -24,7 +24,7 @@
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     // Connect to the database
-    $conn = mysqli_connect('167.172.108.210', 'root', 'user123', 'woodytoys');
+    $conn = mysqli_connect('192.168.0.3', 'root', 'root123', 'woodytoys');
     $sql = 'SELECT * FROM Products';
 
     if ($result = $conn->query($sql)) {
