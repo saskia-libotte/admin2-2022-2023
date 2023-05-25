@@ -24,7 +24,7 @@
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
     // Connect to the database
-    $conn = mysqli_connect('192.168.0.3', 'root123', 'root123', 'woodytoys');
+    $conn = mysqli_connect('192.168.0.3', 'root123', 'root123', 'db');
     $sql = 'SELECT * FROM cadeau';
 
     if ($result = $conn->query($sql)) {
