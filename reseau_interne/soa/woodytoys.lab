@@ -11,8 +11,8 @@ $TTL 86400
 
 
 
-resolver          IN     A       192.168.0.7
+resolver        IN     A       192.168.0.7
 soa             IN     A       192.168.0.4
 www             IN     A       192.168.0.2
-mail             IN     A       172.20.1.5
-db              IN      A       192.168.0.3
+mail            IN     A       192.168.0.5
+db              IN     A       192.168.0.3
