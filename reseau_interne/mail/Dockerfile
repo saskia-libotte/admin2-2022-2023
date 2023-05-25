@@ -6,7 +6,7 @@ RUN apt install dovecot-imapd dovecot-pop3d -y
 RUN apt install postfix -y
 
 COPY dovecot.conf /etc/dovecot/
-COPY postfix.conf /etc/postfix/
+COPY main.cf /etc/postfix/
 
 
 RUN adduser pauline && echo "pauline:pauline" | chpasswd
