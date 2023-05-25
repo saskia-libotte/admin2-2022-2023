@@ -68,7 +68,7 @@
             echo "<p class='error'>Ce jouet existe déjà !</p>";
         } else {
             // Insert new toy into the database
-            $insertSql = "INSERT INTO cadeau (id, price, name) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
+            $insertSql = "INSERT INTO cadeau (id, name, price) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
             if ($conn->query($insertSql) === TRUE) {
                 echo "<p class='success'>Jouet ajouté avec succès !</p>";
                 // Refresh the page to update the id list
