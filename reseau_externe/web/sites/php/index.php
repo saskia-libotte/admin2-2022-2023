@@ -25,17 +25,17 @@
 
     // Connect to the database
     $conn = mysqli_connect('192.168.0.3', 'root', 'root123', 'woodytoys');
-    $sql = 'SELECT * FROM Products';
+    $sql = 'SELECT * FROM cadeau';
 
     if ($result = $conn->query($sql)) {
         echo "<table><tr><th>Nos Produits</th><th>Prix</th><th>Quantité</th></tr>";
         while ($data = $result->fetch_assoc()) {
             echo "<tr><td>";
-            echo $data['Product'];
+            echo $data['id'];
             echo "</td><td>";
-            echo $data['Price'];
+            echo $data['name'];
             echo "</td><td>";
-            echo $data['Quantity'];
+            echo $data['price'];
             echo "</td></tr>";
         }
         echo "</table>";
@@ -48,16 +48,16 @@
         $quantiteDuProduit = $_POST['quantiteDuProduit'];
 
         // Check if the toy already exists
-        $checkSql = "SELECT * FROM Products WHERE Product='$nomProduit'";
+        $checkSql = "SELECT * FROM cadeau WHERE id='$nomProduit'";
         $checkResult = $conn->query($checkSql);
         if ($checkResult->num_rows > 0) {
             echo "<p class='error'>Ce jouet existe déjà !</p>";
         } else {
             // Insert new toy into the database
-            $insertSql = "INSERT INTO Products (Product, Quantity, Price) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
+            $insertSql = "INSERT INTO cadeau (id, price, name) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
             if ($conn->query($insertSql) === TRUE) {
                 echo "<p class='success'>Jouet ajouté avec succès !</p>";
-                // Refresh the page to update the product list
+                // Refresh the page to update the id list
                 echo "<meta http-equiv='refresh' content='0'>";
             } else {
                 echo "<p class='error'>Erreur lors de l'ajout du jouet : " . $conn->error . "</p>";
@@ -70,10 +70,10 @@
         $nomProduitASupprimer = $_POST['nomDuProduitASupprimer'];
 
         // Delete toy from the database
-        $deleteSql = "DELETE FROM Products WHERE Product='$nomProduitASupprimer'";
+        $deleteSql = "DELETE FROM cadeau WHERE id='$nomProduitASupprimer'";
         if ($conn->query($deleteSql) === TRUE) {
             echo "<p class='success'>Jouet supprimé avec succès !</p>";
-            // Refresh the page to update the product list
+            // Refresh the page to update the id list
             echo "<meta http-equiv='refresh' content='0'>";
         } else {
             echo "<p class='error'>Erreur lors de la suppression du jouet : " . $conn->error . "</p>";
