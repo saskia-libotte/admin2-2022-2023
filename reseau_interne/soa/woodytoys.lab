@@ -8,6 +8,7 @@ $TTL 86400
                     86400 )    ; minimum TTL of 1 day
 
       IN     NS     soa.woodytoys.lab.
+      IN     MX     10    mail.woodytoys.lab.
 
 
 
