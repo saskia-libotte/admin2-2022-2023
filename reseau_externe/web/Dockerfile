@@ -23,7 +23,7 @@ RUN a2ensite apache2.conf
 RUN a2ensite b2b.conf
 
 COPY . /var/www/html
-COPY ./site_vitrine /var/www/html/site_vitrine
-COPY ./b2b /var/www/html/b2b
+COPY ./sites/html /var/www/html/site_vitrine
+COPY ./sites/php /var/www/html/b2b
 
 EXPOSE 443
