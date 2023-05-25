@@ -44,14 +44,6 @@ services:
     container_name: resolver
     hostname: resolver
 
-  soa:
-    build: ./reseau_interne/soa
-    networks:
-      default:
-        ipv4_address: 192.168.0.4
-    container_name: soa
-    hostname: soa 
-
   web:
     build: ./reseau_interne/web
     networks:
@@ -63,8 +55,6 @@ services:
     depends_on: 
       - db
 
-
-
   db:
     build: ./reseau_interne/DB
     networks:
@@ -73,3 +63,22 @@ services:
     container_name: db
     hostname: db 
     dns: 192.168.0.4
+
+  soa:
+    build: ./reseau_interne/soa
+    networks:
+      default:
+        ipv4_address: 192.168.0.4
+    container_name: soa
+    hostname: soa 
+
+  mail:
+    build: ./reseau_interne/mail
+    networks:
+      default:
+        ipv4_address: 192.168.0.5
+    container_name: mail
+    hostname: mail 
+    dns: 192.168.0.4
+    environment: 
+      - maildomain=woodytoys.lab
