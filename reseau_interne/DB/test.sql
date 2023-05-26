@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS cadeau (
 
 -- Insérer des données dans la table
 INSERT INTO cadeau (name, price) VALUES
-  ('peluche', 11.50),
-  ('voiture', 5.36),
-  ('echec', 9.99);
+  ('peluche', 20.3),
+  ('voiture', 150.2),
+  ('echec', 30.54);
 
 -- Créer un utilisateur pour accéder à la base de données
 CREATE USER IF NOT EXISTS 'userdb'@'%' IDENTIFIED BY 'Zh0qtDbBRiKsmX4V8dES';

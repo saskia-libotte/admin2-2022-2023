@@ -2,7 +2,6 @@
 <html>
 <head>
     <title>Woodytoys B2B</title>
-    <link rel="icon" href="https://static.vecteezy.com/ti/photos-gratuite/p2/963590-gros-plan-d-un-jouet-en-bois-avion-modele-sculpte-a-la-main-photo.jpg" type="image/jpeg">
     
 </head>
 <body>
