@@ -6,7 +6,7 @@
     
 </head>
 <body>
-    <h1> voici les données de la base de données.
+    <h1> voici les données de la base de données.</h1>
 
     <?php
 
@@ -29,12 +29,13 @@
 
         // Affichage des données dans un tableau HTML
         if ($result->num_rows > 0) {
-            echo "<table>";
-            echo "<tr><th>ID</th><th>Nom</th><th>Prix</th></tr>";
+            echo "<table><thead>";
+
+            echo "<tr><th>ID</th><th>Nom</th><th>Prix</th></tr></thead><tbody>";
             while($row = $result->fetch_assoc()) {
                 echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td></tr>";
         }
-        echo "</table>";
+        echo "</tbody></table>";
         } else {
             echo "0 résultats";
         }
