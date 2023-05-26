@@ -23,7 +23,7 @@
     <?php
 
         // Connexion à la base de données
-        $servername = "192.168.0.3";
+        $servername = "192.168.0.3:3306";
         $username = "root123";
         $password = "root123";
         $dbname = "db";
