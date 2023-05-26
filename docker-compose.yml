@@ -118,3 +118,12 @@ services:
     hostname: mail 
     dns: 172.20.1.4
     tty: true
+
+  simon_public:
+    build: ./reseau_externe/simon
+    networks:
+      default:
+        ipv4_address: 192.168.0.12
+    container_name: simon_public
+    hostname: simon_public
+    dns: 172.20.1.4
