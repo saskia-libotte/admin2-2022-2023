@@ -9,6 +9,8 @@ RUN apt install telnet postfix -y
 
 COPY dovecot.conf /etc/dovecot/
 COPY main.cf /etc/postfix/
+COPY conf.d/ /etc/dovecot/conf.d
+
 
 EXPOSE 25 143 110 587 993
 
