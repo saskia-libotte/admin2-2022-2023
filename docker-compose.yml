@@ -97,23 +97,23 @@ services:
       - "209.38.227.83:53:53/udp"
     container_name: soa_public
 
-    web_public:
-      build: ./reseau_externe/web
-      networks:
-        default:
-          ipv4_address: 192.168.0.10
-      ports:
-        - "80:80"
-        - "443:443"
-      container_name: web_public
-      depends_on:
-        - db
+  web_public:
+    build: ./reseau_externe/web
+    networks:
+      default:
+        ipv4_address: 192.168.0.10
+    ports:
+      - "80:80"
+      - "443:443"
+    container_name: web_public
+    depends_on:
+      - db
 
-    mail_public:
-      build: ./reseau_externe/mail
-      networks:
-        default:
-          ipv4_address: 192.168.0.11
-      container_name: mail_public
-      hostname: mail 
-      dns: 172.20.1.4
+  mail_public:
+    build: ./reseau_externe/mail
+    networks:
+      default:
+        ipv4_address: 192.168.0.11
+    container_name: mail_public
+    hostname: mail 
+    dns: 172.20.1.4
