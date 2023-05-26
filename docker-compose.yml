@@ -118,6 +118,8 @@ services:
     hostname: mail 
     dns: 172.20.1.4
     tty: true
+    environment:
+      - maildomain=mmes-2.ephec-ti.be
 
   simon_public:
     build: ./reseau_externe/simon
