@@ -17,16 +17,13 @@
 
         $conn = new MySQLi($servername, $username, $password, $dbname);
 
-        // Vérification de la connexion
         if ($conn->connect_error) {
             die("The connection failed: " . $conn->connect_error);
         }
 
-        // Récupération des données de la table "cadeau"
         $sql = "SELECT * FROM cadeau";
         $result = $conn->query($sql);
-
-        // Affichage des données dans un tableau HTML
+    
         if ($result->num_rows > 0) {
             echo "<table><thead>";
 
@@ -38,8 +35,7 @@
         } else {
             echo "0 résultats";
         }
-
-        // Fermeture de la connexion
+        
         $conn->close();
     ?>
 
