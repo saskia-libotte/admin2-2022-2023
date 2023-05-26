@@ -10,7 +10,6 @@
     <form method="POST" action="?">
         <input type="search" placeholder="Nom du jouet" name="nomDuProduit">
         <input type="search" placeholder="Prix du jouet" name="prixDuProduit">
-        <input type="search" placeholder="Quantité du jouet" name="quantiteDuProduit">
         <button type="submit">Ajouter le nouveau jouet !</button>
     </form>
 
@@ -56,10 +55,9 @@
 
 
     // Handle form submission for adding a toy
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nomDuProduit']) && isset($_POST['prixDuProduit']) && isset($_POST['quantiteDuProduit'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nomDuProduit']) && isset($_POST['prixDuProduit'])) {
         $nomProduit = $_POST['nomDuProduit'];
         $prixDuProduit = $_POST['prixDuProduit'];
-        $quantiteDuProduit = $_POST['quantiteDuProduit'];
 
         // Check if the toy already exists
         $checkSql = "SELECT * FROM cadeau WHERE id='$nomProduit'";
@@ -68,7 +66,7 @@
             echo "<p class='error'>Ce jouet existe déjà !</p>";
         } else {
             // Insert new toy into the database
-            $insertSql = "INSERT INTO cadeau (id, name, price) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
+            $insertSql = "INSERT INTO cadeau (name, price) VALUES ('$nomProduit', $quantiteDuProduit)";
             if ($conn->query($insertSql) === TRUE) {
                 echo "<p class='success'>Jouet ajouté avec succès !</p>";
                 // Refresh the page to update the id list
@@ -84,7 +82,7 @@
         $nomProduitASupprimer = $_POST['nomDuProduitASupprimer'];
 
         // Delete toy from the database
-        $deleteSql = "DELETE FROM cadeau WHERE id='$nomProduitASupprimer'";
+        $deleteSql = "DELETE FROM cadeau WHERE name='$nomProduitASupprimer'";
         if ($conn->query($deleteSql) === TRUE) {
             echo "<p class='success'>Jouet supprimé avec succès !</p>";
             // Refresh the page to update the id list
