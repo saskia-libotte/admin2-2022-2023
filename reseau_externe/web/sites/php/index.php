@@ -44,7 +44,7 @@
             echo "<table>";
             echo "<tr><th>ID</th><th>Nom</th><th>Prix</th></tr>";
             while($row = $result->fetch_assoc()) {
-                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td></tr>";
+                echo "<tr><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td><td>" . $row["qte"] . "</td></tr>";
         }
         echo "</table>";
         } else {
@@ -68,7 +68,7 @@
             echo "<p class='error'>Ce jouet existe déjà !</p>";
         } else {
             // Insert new toy into the database
-            $insertSql = "INSERT INTO cadeau (id, name, price) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
+            $insertSql = "INSERT INTO cadeau (name, price, qte) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
             if ($conn->query($insertSql) === TRUE) {
                 echo "<p class='success'>Jouet ajouté avec succès !</p>";
                 // Refresh the page to update the id list
@@ -84,7 +84,7 @@
         $nomProduitASupprimer = $_POST['nomDuProduitASupprimer'];
 
         // Delete toy from the database
-        $deleteSql = "DELETE FROM cadeau WHERE id='$nomProduitASupprimer'";
+        $deleteSql = "DELETE FROM cadeau WHERE name='$nomProduitASupprimer'";
         if ($conn->query($deleteSql) === TRUE) {
             echo "<p class='success'>Jouet supprimé avec succès !</p>";
             // Refresh the page to update the id list

@@ -11,14 +11,15 @@ USE db;
 CREATE TABLE IF NOT EXISTS cadeau (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  price FLOAT(10, 2) NOT NULL
+  price FLOAT(10, 2) NOT NULL,
+  qte INTEGER NOT NULL
 );
 
 -- Insérer des données dans la table
 INSERT INTO cadeau (name, price) VALUES
-  ('peluche', 11.50),
-  ('voiture', 5.36),
-  ('echec', 9.99);
+  ('peluche', 11.50, 3),
+  ('voiture', 5.36, 5),
+  ('echec', 9.99, 7);
 
 -- Créer un utilisateur pour accéder à la base de données
 CREATE USER IF NOT EXISTS 'userdb'@'%' IDENTIFIED BY 'Zh0qtDbBRiKsmX4V8dES';
