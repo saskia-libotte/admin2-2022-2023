@@ -12,6 +12,8 @@ COPY main.cf /etc/postfix/
 
 EXPOSE 25 143 110 587 993
 
-RUN useradd -m -p contact contact
+RUN useradd -m -p saskia saskia
+RUN useradd -m -p pauline pauline
+RUN useradd -m -p simon simon
 
 CMD service postfix start && service dovecot start && tail -f /dev/null
