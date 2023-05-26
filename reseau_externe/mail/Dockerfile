@@ -6,10 +6,11 @@ RUN apt install dovecot-imapd dovecot-pop3d -y
 RUN apt install iputils-ping -y
 RUN apt install dnsutils -y
 RUN apt install telnet postfix -y
+RUN apt install net-tools -y
 
 COPY dovecot.conf /etc/dovecot/
 COPY main.cf /etc/postfix/
-COPY conf.d/ /etc/dovecot/conf.d
+
 
 
 EXPOSE 25 143 110 587 993
