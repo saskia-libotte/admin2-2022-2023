@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS cadeau (
 );
 
 -- Insérer des données dans la table
-INSERT INTO cadeau (name, price) VALUES
+INSERT INTO cadeau (name, price, qte) VALUES
   ('peluche', 11.50, 3),
   ('voiture', 5.36, 5),
   ('echec', 9.99, 7);
