@@ -14,12 +14,13 @@ RUN apt install dnsutils -y
 RUN apt install traceroute -y
 RUN apt install links -y
 RUN apt install tcpdump -y
-RUN apt a2enmod ssl
+
 
 
 COPY apache2.conf /etc/apache2/sites-available/apache2.conf
 COPY b2b.conf /etc/apache2/sites-available/b2b.conf
 
+RUN a2enmod ssl
 
 RUN a2ensite apache2.conf
 RUN a2ensite b2b.conf
@@ -27,6 +28,7 @@ RUN a2ensite b2b.conf
 COPY . /var/www/html
 COPY ./sites/html /var/www/html/site
 COPY ./sites/php /var/www/html/b2b
+
 
 RUN service apache2 restart
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/your_domain.key -out /etc/ssl/certs/your_domain.crt
