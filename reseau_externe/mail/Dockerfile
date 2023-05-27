@@ -10,8 +10,9 @@ RUN apt install dovecot-common dovecot-imapd dovecot-pop3d -y
 RUN apt install nano -y
 RUN postfix dovecot-core dovecot-imapd dovecot-pop3d
 
-COPY main.cf /etc/postfix/
-COPY dovecot.conf /etc/dovecot/
+COPY main.cf /etc/postfix/main.cf
+COPY dovecot.conf /etc/dovecot/dovecot.conf
+COPY 10-auth.conf /etc/dovecot/conf.d/10-auth.conf
 
 EXPOSE 25 143 110 587 993
 
