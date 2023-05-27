@@ -27,3 +27,4 @@ recipient_delimiter = +
 inet_interfaces = all
 inet_protocols = all
 log_path = /var/log/dovecot.log
+inet_interfaces = all
