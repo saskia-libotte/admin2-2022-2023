@@ -20,7 +20,7 @@ RUN apt install tcpdump -y
 COPY apache2.conf /etc/apache2/sites-available/apache2.conf
 COPY b2b.conf /etc/apache2/sites-available/b2b.conf
 
-RUN a2enmod ssl
+
 
 RUN a2ensite apache2.conf
 RUN a2ensite b2b.conf
@@ -31,7 +31,6 @@ COPY ./sites/php /var/www/html/b2b
 
 
 
-RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/your_domain.key -out /etc/ssl/certs/your_domain.crt
 RUN service apache2 restart
 
 EXPOSE 443
