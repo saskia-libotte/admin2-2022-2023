@@ -2,6 +2,11 @@ myhostname = mail.mmes-2.ephec-ti.be
 mydomain = mmes-2.ephec-ti.be
 
 myorigin = $mydomain
+compatibility_level = 3.6
+biff = no
+append_dot_mydomain = no
+readme_directory = no
+
 
 inet_interfaces = all
 
@@ -17,4 +22,7 @@ smtpd_banner = $myhostname ESMTP $mail_name
 smtpd_relay_restrictions = permit_mynetworks, reject
 
 maillog_file=/var/log/postfix.log
+inet_protocols = all
+alias_maps = hash:/etc/aliases
+alias_database = hash:/etc/aliases
 
