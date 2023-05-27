@@ -7,7 +7,7 @@ RUN apt install dnsutils -y
 RUN apt install telnet -y
 RUN apt install net-tools -y
 RUN apt install nano -y
-RUN apt install postfix dovecot-core dovecot-imapd dovecot-pop3d
+RUN apt install postfix dovecot-core dovecot-imapd dovecot-pop3d -y
 
 COPY main.cf /etc/postfix/main.cf
 COPY dovecot.conf /etc/dovecot/dovecot.conf
