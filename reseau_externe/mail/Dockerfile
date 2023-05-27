@@ -18,4 +18,4 @@ RUN useradd -m -p saskia saskia
 RUN useradd -m -p pauline pauline
 RUN useradd -m -p simon simon
 
-CMD service postfix start && service dovecot start && tail -f /dev/null
+CMD service postfix start && tail -f /dev/null
