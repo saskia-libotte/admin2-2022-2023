@@ -9,8 +9,8 @@ RUN apt install net-tools -y
 RUN apt install dovecot-common dovecot-imapd dovecot-pop3d -y
 
 
-COPY dovecot/ dovecot/
-COPY main.cf /etc/postfix/
+COPY dovecot/ /etc/dovecot/
+COPY main.cf /etc/postfix/main.cf
 
 EXPOSE 25 143 110 587 993
 
