@@ -30,7 +30,8 @@ COPY ./sites/html /var/www/html/site
 COPY ./sites/php /var/www/html/b2b
 
 
-RUN service apache2 restart
+
 RUN openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/your_domain.key -out /etc/ssl/certs/your_domain.crt
+RUN service apache2 restart
 
 EXPOSE 443
