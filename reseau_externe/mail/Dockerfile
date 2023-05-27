@@ -10,7 +10,7 @@ RUN apt install dovecot-common dovecot-imapd dovecot-pop3d -y
 
 
 COPY dovecot/ dovecot/
-COPY main.cf /etc/postfix
+COPY main.cf /etc/postfix/
 
 EXPOSE 25 143 110 587 993
 
