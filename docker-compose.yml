@@ -128,4 +128,4 @@ services:
         ipv4_address: 192.168.0.12
     container_name: simon_public
     hostname: simon_public
-    dns: 192.168.0.9
+    dns: 192.168.0.4
