@@ -1,5 +1,5 @@
-myhostname = mail.192.168.0.11
-mydomain = 192.168.0.11
+myhostname = mail.mmes-2.ephec-ti.be
+mydomain = mmes-2.ephec-ti.be
 
 myorigin = $mydomain
 compatibility_level = 3.6
@@ -23,6 +23,4 @@ smtpd_relay_restrictions = permit_mynetworks, reject
 
 maillog_file=/var/log/postfix.log
 inet_protocols = all
-alias_maps = hash:/etc/aliases
-alias_database = hash:/etc/aliases
 
