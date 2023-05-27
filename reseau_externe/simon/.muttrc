@@ -7,6 +7,6 @@ set smtp_url = "smtp://mail.mmes-2.ephec-ti.be:25"
 set spoolfile="imap://simon@mail.mmes-2.ephec-ti.be/"
 set imap_user = "simon@mmes-2.ephec-ti.be"
 set imap_pass = "simon"
-set folder = "imap://simon@mail.mmes-2.ephec-ti.be/"
+set folder = "imap://simon@192.168.0.11:143/"
 
 set editor = "nano"
