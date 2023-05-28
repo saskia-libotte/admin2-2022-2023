@@ -24,7 +24,7 @@ RUN a2enmod ssl
 RUN a2ensite vitrine.conf
 RUN a2ensite b2b.conf
 
-RUN service apache2 restart
+RUN service apache restart
 
 EXPOSE 80
 EXPOSE 443
