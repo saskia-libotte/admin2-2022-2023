@@ -121,7 +121,7 @@ services:
     environment:
       - maildomain=mmes-2.ephec-ti.be
     ports:
-      - "2525:25"
+      - "25:25"
       - "110:110"
       - "143:143"
       - "587:587"
