@@ -17,9 +17,9 @@ RUN apt install tcpdump -y
 
 COPY apache2.conf /etc/apache2/sites-available/apache2.conf
 COPY b2b.conf /etc/apache2/sites-available/b2b.conf
-COPY ./conf/secu/private/private.key /etc/ssl/private/
-COPY ./conf/secu/ssl/ca_bundle.crt /etc/ssl/
-COPY ./conf/secu/ssl/certificate.crt /etc/ssl/
+COPY ./sécu/private_key/private.key /etc/ssl/private/
+COPY ./sécu/ssl/ca_bundle.crt /etc/ssl/
+COPY ./sécu/ssl/certificate.crt /etc/ssl/
 
 
 RUN a2ensite apache2.conf
