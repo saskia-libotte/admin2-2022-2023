@@ -8,7 +8,7 @@ RUN mkdir -p /www/home/logs/
 
 COPY ./sites/ /var/www/
 
-COPY ./apache2.conf /etc/apache2/
+COPY ./vitrine.conf /etc/apache2/
 
 
 COPY ./secu/private/private.key /etc/ssl/private/
