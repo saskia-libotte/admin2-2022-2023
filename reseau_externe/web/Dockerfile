@@ -8,10 +8,8 @@ RUN mkdir -p /www/home/logs/
 
 COPY ./sites/ /var/www/
 
-COPY ./secu/ports.conf /etc/apache2/
 COPY ./apache2.conf /etc/apache2/
-COPY ./secu/virtualhost/b2b.conf /etc/apache2/sites-available/
-COPY ./secu/virtualhost/vitrine.conf /etc/apache2/sites-available/
+
 
 COPY ./secu/private/private.key /etc/ssl/private/
 COPY ./secu/ssl/ca_bundle.crt /etc/ssl/
@@ -23,6 +21,8 @@ RUN a2enmod ssl
 
 RUN a2ensite vitrine.conf
 RUN a2ensite b2b.conf
+
+RUN service apache2 restart
 
 EXPOSE 80
 EXPOSE 443
