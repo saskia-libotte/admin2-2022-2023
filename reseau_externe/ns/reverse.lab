@@ -1,0 +1,15 @@
+
+$ORIGIN 0.168.192.in-addr.arpa.
+$TTL 86400
+@       IN      SOA     ns_public.mmes-2.ephec-ti.be.      hostmaster.woodytoys.lab. (
+                        2001062501 ; serial
+                        21600      ; refresh after 6 hours
+                        3600       ; retry after 1 hour
+                        604800     ; expire after 1 week
+                        86400 )    ; minimum TTL of 1 day
+
+        IN      ns_public      ns_public.mmes-2.ephec-ti.be.
+
+10	IN	PTR	www.mmes-2.ephec-ti.be.
+11	IN	PTR	mail.mmes-2.ephec-ti.be.
+9	IN	PTR	ns_public.mmes-2.ephec-ti.be.
