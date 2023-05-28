@@ -8,14 +8,14 @@ RUN mkdir -p /www/home/logs/
 
 COPY ./sites/ /var/www/
 
-COPY ./ports.conf /etc/apache2/
-COPY ./apache2.conf /etc/apache2/
-COPY ./virtualhosting/b2b.conf /etc/apache2/sites-available/
-COPY ./virtualhosting/vitrine.conf /etc/apache2/sites-available/
+COPY ./config/ports.conf /etc/apache2/
+COPY ./config/apache2.conf /etc/apache2/
+COPY ./config/virtualhosting/b2b.conf /etc/apache2/sites-available/
+COPY ./config/virtualhosting/vitrine.conf /etc/apache2/sites-available/
 
-COPY ./secu/private/private.key /etc/ssl/private/
-COPY ./secu/ssl/ca_bundle.crt /etc/ssl/
-COPY ./secu/ssl/certificate.crt /etc/ssl/
+COPY ./config/secu/private/private.key /etc/ssl/private/
+COPY ./config/secu/ssl/ca_bundle.crt /etc/ssl/
+COPY ./config/secu/ssl/certificate.crt /etc/ssl/
 
 RUN a2dissite 000-default.conf
 
