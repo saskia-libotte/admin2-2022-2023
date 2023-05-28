@@ -22,6 +22,5 @@ COPY main.cf /etc/postfix/
 
 EXPOSE 25 143 110 587 993
 
-RUN useradd -m -p simon simon
 
 CMD service postfix start && service dovecot start && tail -f /dev/null
