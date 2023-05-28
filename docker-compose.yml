@@ -135,3 +135,4 @@ services:
     container_name: simon_public
     hostname: simon_public
     dns: 192.168.0.4
+    tty: true
