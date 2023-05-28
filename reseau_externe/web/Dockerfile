@@ -8,17 +8,21 @@ RUN mkdir -p /www/home/logs/
 
 COPY ./sites/ /var/www/
 
-COPY ./vitrine.conf /etc/apache2/
+COPY ./conf/ports.conf /etc/apache2/
+COPY ./conf/apache2.conf /etc/apache2/
+COPY ./conf/virtualhosting/b2b.conf /etc/apache2/sites-available/
+COPY ./conf/virtualhosting/vitrine.conf /etc/apache2/sites-available/
 
-
-COPY ./secu/private/private.key /etc/ssl/private/
-COPY ./secu/ssl/ca_bundle.crt /etc/ssl/
-COPY ./secu/ssl/certificate.crt /etc/ssl/
+COPY ./conf/secu/private/private.key /etc/ssl/private/
+COPY ./conf/secu/ssl/ca_bundle.crt /etc/ssl/
+COPY ./conf/secu/ssl/certificate.crt /etc/ssl/
 
 RUN a2dissite 000-default.conf
 
 RUN a2enmod ssl
 
+RUN a2ensite vitrine.conf
+RUN a2ensite b2b.conf
 
 RUN service apache2 restart
 
