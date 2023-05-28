@@ -1,37 +1,30 @@
-FROM php:7.4-apache
+FROM php:8.0-apache
 
-# Ajout de différents packages.
-RUN apt update -y && apt upgrade -y
-RUN docker-php-ext-install mysqli && docker-php-ext-enable mysqli
-RUN apt install -y openssl certbot python3-certbot-apache
+RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli
 
-# Certificats pour le site www
-RUN openssl genrsa -out /etc/ssl/certs/www.key 2048
-RUN openssl req -new -sha256 -key /etc/ssl/certs/www.key -out /etc/ssl/certs/www.csr -subj "/C=BE/ST=Brabant-wallon/L=Louvain-La-Neuve/O=Ephec/OU=IT/CN=www.mmes-2.ephec-ti.be"
-RUN openssl x509 -req -days 365 -in /etc/ssl/certs/www.csr -signkey /etc/ssl/certs/www.key -out /etc/ssl/certs/www.crt
+RUN mkdir /var/log/apache2/html
+RUN mkdir /var/log/apache2/php
+RUN mkdir -p /www/home/logs/
 
-# Certificats pour le site b2b
-RUN openssl genrsa -out /etc/ssl/certs/b2b.key 2048
-RUN openssl req -new -sha256 -key /etc/ssl/certs/b2b.key -out /etc/ssl/certs/b2b.csr -subj "/C=BE/ST=Brabant-wallon/L=Louvain-La-Neuve/O=Ephec/OU=IT/CN=b2b.mmes-2.ephec-ti.be"
-RUN openssl x509 -req -days 365 -in /etc/ssl/certs/b2b.csr -signkey /etc/ssl/certs/b2b.key -out /etc/ssl/certs/b2b.crt
+COPY ./sites/ /var/www/
 
-# Copie des fichiers à implémenter dans le container docker "web".
-COPY apache2.conf /etc/apache2/sites-available
-COPY b2b.conf /etc/apache2/sites-available
+COPY ./secu/ports.conf /etc/apache2/
+COPY ./apache2.conf /etc/apache2/
+COPY ./secu/virtualhost/b2b.conf /etc/apache2/sites-available/
+COPY ./secu/virtualhost/vitrine.conf /etc/apache2/sites-available/
 
-# lien entre sites-available et sitesenabled
-RUN ln -s /etc/apache2/sites-available/www.mmes-2.ephec-ti.be.conf /etc/apache2/sites-enabled
-RUN ln -s /etc/apache2/sites-available/b2b.mmes-2.ephec-ti.be.conf /etc/apache2/sites-enabled
+COPY ./secu/private/private.key /etc/ssl/private/
+COPY ./secu/ssl/ca_bundle.crt /etc/ssl/
+COPY ./secu/ssl/certificate.crt /etc/ssl/
 
-# Création des répertoire dans le container
-RUN mkdir /var/www/b2b.mmes-2.ephec-ti.be
-RUN mkdir /var/www/www.mmes-2.ephec-ti.be
+RUN a2dissite 000-default.conf
 
-
-# Copier des fichier à afficher contenant les pages web
-COPY /sites/html/index.html /var/www/www.mmes-2.ephec-ti.be
-COPY /sites/php/index.php /var/www/b2b.mmes-2.ephec-ti.be
-
-# SSL
 RUN a2enmod ssl
-RUN service apache2 start
+
+RUN a2ensite vitrine.conf
+RUN a2ensite b2b.conf
+
+RUN service apache2 restart
+
+EXPOSE 80
+EXPOSE 443
