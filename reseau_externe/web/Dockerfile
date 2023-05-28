@@ -16,8 +16,8 @@ RUN openssl req -new -sha256 -key /etc/ssl/certs/b2b.key -out /etc/ssl/certs/b2b
 RUN openssl x509 -req -days 365 -in /etc/ssl/certs/b2b.csr -signkey /etc/ssl/certs/b2b.key -out /etc/ssl/certs/b2b.crt
 
 # Copie des fichiers à implémenter dans le container docker "web".
-COPY config/www.mmes-2.ephec-ti.be.conf /etc/apache2/sites-available
-COPY config/b2b.mmes-2.ephec-ti.be.conf /etc/apache2/sites-available
+COPY apache2.conf /etc/apache2/sites-available
+COPY b2b.conf /etc/apache2/sites-available
 
 # lien entre sites-available et sitesenabled
 RUN ln -s /etc/apache2/sites-available/www.mmes-2.ephec-ti.be.conf /etc/apache2/sites-enabled
@@ -29,8 +29,8 @@ RUN mkdir /var/www/www.mmes-2.ephec-ti.be
 
 
 # Copier des fichier à afficher contenant les pages web
-COPY /sites/www/index.html /var/www/www.mmes-2.ephec-ti.be
-COPY /sites/b2b/index.php /var/www/b2b.mmes-2.ephec-ti.be
+COPY /sites/html/index.html /var/www/www.mmes-2.ephec-ti.be
+COPY /sites/php/index.php /var/www/b2b.mmes-2.ephec-ti.be
 
 # SSL
 RUN a2enmod ssl
