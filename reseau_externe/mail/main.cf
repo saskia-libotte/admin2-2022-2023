@@ -2,14 +2,6 @@ myhostname = mail.mmes-2.ephec-ti.be
 mydomain = mmes-2.ephec-ti.be
 
 myorigin = $mydomain
-
-mydestination = $myhostname localhost.$mydomain localhost $mydomain
-
-smtpd_banner = $myhostname ESMTP $mail_name
-
-mynetworks = 192.268.0.0/16 127.0.0.0/8 [::1]/128 
-smtpd_relay_restrictions = permit_mynetworks, reject
-
-maillog_file=/var/log/postfix.log
-#debug_peer_list = mmes-2.ephec-ti.be
-#debug_peer_level = 5
+inet_interfaces = 209.38.227.83
+inet_protocols = all
+mydestination = $myhostname, localhost.$mydomain, localhost, $mydomain
