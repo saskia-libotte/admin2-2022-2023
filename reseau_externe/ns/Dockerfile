@@ -14,6 +14,7 @@ RUN apt install tcpdump -y
 
 COPY named.conf /etc/bind/
 COPY mmes-2.ephec-ti.be.zone /etc/bind/
+COPY reverse.lab /etc/bind/ 
 
 EXPOSE 53/tcp/udp
 
