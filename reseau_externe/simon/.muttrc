@@ -1,11 +1,11 @@
-set from="simon@ns.mmes-2.ephec-ti.be"
+set from="simon@mmes-2.ephec-ti.be"
 set ssl_starttls=no
 set ssl_force_tls=no
 set smtp_url = "smtp://mail.mmes-2.ephec-ti.be:25"
 
 # Imap settings
 set spoolfile="imap://simon@mail.mmes-2.ephec-ti.be/"
-set imap_user = "simon@ns.mmes-2.ephec-ti.be"
+set imap_user = "simon@mmes-2.ephec-ti.be"
 set imap_pass = "simon"
 set folder = "imap://simon@mail.mmes-2.ephec-ti.be/"
 
