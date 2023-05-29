@@ -11,5 +11,5 @@ $TTL 86400
         IN      ns      ns.mmes-2.ephec-ti.be.
 
 10	IN	PTR	www.mmes-2.ephec-ti.be.
-11	IN	PTR	mail.mmes-2.ephec-ti.be.
+11	IN	PTR	mail.ns.mmes-2.ephec-ti.be.
 9	IN	PTR	ns.mmes-2.ephec-ti.be.
