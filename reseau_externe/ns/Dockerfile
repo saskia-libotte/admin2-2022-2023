@@ -17,9 +17,7 @@ WORKDIR /etc/bind
 RUN cd /etc/bind
 RUN dnssec-keygen -a RSASHA256 -b 1024 -n ZONE mmes-2.ephec-ti.be 
 RUN dnssec-keygen -a RSASHA256 -b 1024 -n ZONE -f KSK mmes-2.ephec-ti.be
-RUN cat Kmmes-2.ephec-ti.be.+008+*.key >> mmes-2.ephec-ti.be
-RUN dnssec-signzone -t -g -o mmes-2.ephec-ti.be mmes-2.ephec-ti.be /etc/bind/Kmmes-2.ephec-ti.be.+008+*.private
-RUN dnssec-signzone -A -3 $(head -c 1000 /dev/random | sha1sum | cut -b 1-16) -N INCREMENT -o mmes-2.ephec-ti.be -t mmes-2.ephec-ti.be
+
 
 COPY named.conf /etc/bind/
 COPY mmes-2.ephec-ti.be /etc/bind/
