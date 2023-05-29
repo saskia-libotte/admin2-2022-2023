@@ -1,4 +1,3 @@
-
 $ORIGIN 0.168.192.in-addr.arpa.
 $TTL 86400
 @       IN      SOA     ns.mmes-2.ephec-ti.be.      hostmaster.woodytoys.lab. (
@@ -8,7 +7,7 @@ $TTL 86400
                         604800     ; expire after 1 week
                         86400 )    ; minimum TTL of 1 day
 
-        IN      ns      ns.mmes-2.ephec-ti.be.
+        IN      NS      ns.mmes-2.ephec-ti.be.
 
 10	IN	PTR	www.mmes-2.ephec-ti.be.
 11	IN	PTR	mail.mmes-2.ephec-ti.be.
