@@ -1,6 +1,6 @@
 $ORIGIN mmes-2.ephec-ti.be.
 $TTL 86400
-@     IN     SOA    ns_public.mmes-2.ephec-ti.be.     hostmaster.mmes-2.ephec-ti.be. (
+@     IN     SOA    ns.mmes-2.ephec-ti.be.     hostmaster.mmes-2.ephec-ti.be. (
                     2001062501 ; serial
                     21600      ; refresh after 6 hours
                     3600       ; retry after 1 hour
@@ -8,10 +8,10 @@ $TTL 86400
                     86400 )    ; minimum TTL of 1 day
 
 ;nom du serveur qui fais autorité
-@      IN     NS     ns_public.mmes-2.ephec-ti.be.
+@      IN     NS     ns.mmes-2.ephec-ti.be.
 
 @ nom du serveur assigné a l'adresse ip
-ns_public             IN     A       209.38.227.83
+ns             IN     A       209.38.227.83
 
 ;serveur web
 www            IN     A       209.38.227.83
