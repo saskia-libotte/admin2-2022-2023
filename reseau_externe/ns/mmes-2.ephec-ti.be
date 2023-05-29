@@ -9,7 +9,7 @@ $TTL 86400
 
       IN     NS     ns.mmes-2.ephec-ti.be.
 
-      IN     MX     10    mail.ns.mmes-2.ephec-ti.be.
+      IN     MX     10    mail.mmes-2.ephec-ti.be.
 
 ns             IN     A       209.38.227.83
 www            IN     A       209.38.227.83

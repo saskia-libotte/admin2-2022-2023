@@ -11,7 +11,7 @@ $TTL 86400
 
       IN     MX     10    mail.mmes-2.ephec-ti.be.
 
-ns            IN     A       192.168.0.9
+ns             IN     A       192.168.0.9
 www            IN     A       192.168.0.10
 b2b            IN     A       192.168.0.10
 mail           IN     A       192.168.0.11
