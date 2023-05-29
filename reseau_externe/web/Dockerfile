@@ -1,30 +1,29 @@
-FROM php:8.0-apache
+FROM php:7.4-apache
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql && docker-php-ext-enable mysqli
+RUN apt-get update && \
+    apt-get install -y libzip-dev libicu-dev libonig-dev zlib1g-dev mariadb-client && \
+    docker-php-ext-install mysqli pdo pdo_mysql && \
+    docker-php-ext-enable mysqli && \
+    a2enmod rewrite
+RUN apt update -y
+RUN apt install net-tools -y
+RUN apt install nano -y
+RUN apt install iputils-ping -y
+RUN apt install traceroute -y
+RUN apt install dnsutils -y
+RUN apt install traceroute -y
+RUN apt install links -y
+RUN apt install tcpdump -y
 
-RUN mkdir /var/log/apache2/html
-RUN mkdir /var/log/apache2/php
-RUN mkdir -p /www/home/logs/
+COPY apache2.conf /etc/apache2/sites-available/apache2.conf
+COPY b2b.conf /etc/apache2/sites-available/b2b.conf
 
-COPY ./sites/ /var/www/
 
-COPY ./config/ports.conf /etc/apache2/
-COPY ./config/apache2.conf /etc/apache2/
-COPY ./config/virtualhosting/b2b.conf /etc/apache2/sites-available/
-COPY ./config/virtualhosting/vitrine.conf /etc/apache2/sites-available/
-
-#COPY ./config/secu/private/private.key /etc/ssl/private/
-#COPY ./config/secu/ssl/ca_bundle.crt /etc/ssl/
-#COPY ./config/secu/ssl/certificate.crt /etc/ssl/
-
-RUN a2dissite 000-default.conf
-
-#RUN a2enmod ssl
-
-RUN a2ensite vitrine.conf
+RUN a2ensite apache2.conf
 RUN a2ensite b2b.conf
 
-#RUN service apache2 restart
+COPY . /var/www/html
+COPY ./sites/html /var/www/html/site
+COPY ./sites/php /var/www/html/b2b
 
-EXPOSE 80
 EXPOSE 443
