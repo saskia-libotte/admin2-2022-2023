@@ -13,8 +13,8 @@ RUN apt install links -y
 RUN apt install tcpdump -y
 
 WORKDIR /etc/bind
-RUN cd /etc/bind
 
+RUN cd /etc/bind
 RUN dnssec-keygen -a RSASHA256 -b 1024 -n ZONE mmes-2.ephec-ti.be 
 RUN dnssec-keygen -a RSASHA256 -b 1024 -n ZONE -f KSK mmes-2.ephec-ti.be
 
