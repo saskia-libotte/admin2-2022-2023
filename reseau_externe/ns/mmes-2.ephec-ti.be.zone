@@ -10,7 +10,7 @@ $TTL 86400
 ;nom du serveur qui fais autorité
 @      IN     NS     ns_public.mmes-2.ephec-ti.be.
 
-@ nom du serveur assigné a l'adresse ip
+;nom du serveur assigné a l'adresse ip
 ns_public             IN     A       209.38.227.83
 
 ;serveur web
