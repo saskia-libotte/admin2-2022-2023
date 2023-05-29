@@ -27,7 +27,7 @@ COPY ./sites/html /var/www/html/site
 COPY ./sites/php /var/www/html/b2b
 
 RUN apt update
-RUN apt install python3 python3-venv libaugeas0
+RUN apt install python3 python3-venv libaugeas0 -y
 RUN apt-get remove certbot
 RUN python3 -m venv /opt/certbot/
 RUN source /opt/certbot/bin/activate
