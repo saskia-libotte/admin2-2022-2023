@@ -26,6 +26,4 @@ COPY . /var/www/html
 COPY ./sites/html /var/www/html/site
 COPY ./sites/php /var/www/html/b2b
 
-
-
 EXPOSE 443
