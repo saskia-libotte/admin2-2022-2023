@@ -30,7 +30,6 @@ RUN apt update
 RUN apt install python3 python3-venv libaugeas0 -y
 RUN apt-get remove certbot
 RUN python3 -m venv /opt/certbot/
-RUN source /opt/certbot/bin/activate
 RUN pip install --upgrade pip
 RUN pip install certbot certbot-apache
 RUN ln -s /opt/certbot/bin/certbot /usr/bin/certbot
