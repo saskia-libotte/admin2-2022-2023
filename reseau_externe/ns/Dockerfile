@@ -12,7 +12,6 @@ RUN apt install traceroute -y
 RUN apt install links -y
 RUN apt install tcpdump -y
 
-RUN mkdir /etc/bind/
 
 RUN dnssec-keygen -f KSK -a RSASHA256 -b 2048 -n ZONE mmes-2.ephec-ti.be
 RUN dnssec-keygen -a RSASHA256 -b 2048 -n ZONE mmes-2.ephec-ti.be

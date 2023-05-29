@@ -26,4 +26,13 @@ COPY . /var/www/html
 COPY ./sites/html /var/www/html/site
 COPY ./sites/php /var/www/html/b2b
 
+RUN apt update
+RUN apt install python3 python3-venv libaugeas0
+RUN apt-get remove certbot
+RUN python3 -m venv /opt/certbot/
+RUN source /opt/certbot/bin/activate
+RUN pip install --upgrade pip
+RUN pip install certbot certbot-apache
+RUN ln -s /opt/certbot/bin/certbot /usr/bin/certbot
+
 EXPOSE 443
