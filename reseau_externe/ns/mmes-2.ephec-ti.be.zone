@@ -10,7 +10,7 @@ $TTL 86400
 ;nom du serveur qui fais autorité
 @      IN     NS     ns.mmes-2.ephec-ti.be.
 
-@ nom du serveur assigné a l'adresse ip
+;nom du serveur assigné a l'adresse ip
 ns_public             IN     A       209.38.227.83
 
 ;serveur web
@@ -21,4 +21,3 @@ b2b            IN     A       209.38.227.83
 mail           IN     A       209.38.227.83
 @              IN     MX      mail
 
-;_4522E72486BB411F1442D39AD13D51C6.mmes-2.ephec-ti.be. 3600 IN CNAME 14F7915D9E10A85C71CE8301C06822EC.A5EDFAF59602695EEBE317B038614196.9164418f76f0d31.comodoca.com.
