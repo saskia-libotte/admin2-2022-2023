@@ -16,6 +16,4 @@ www            IN     A       209.38.227.83
 b2b            IN     A       209.38.227.83
 mail           IN     A       209.38.227.83
 
-$INCLUDE "/etc/bind/keys/mmes-2.ephec-ti.be.zsk.key" ;
-$INCLUDE "/etc/bind/keys/mmes-2.ephec-ti.be.ksk.key" ;
 
