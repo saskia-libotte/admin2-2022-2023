@@ -1,4 +1,4 @@
-myhostname = mail.mmes-2.ephec-ti.be
+myhostname = mail.ns.mmes-2.ephec-ti.be
 mydomain = ns.mmes-2.ephec-ti.be
 myorigin = $mydomain
 # Accepting local mail delivery for those destinations
