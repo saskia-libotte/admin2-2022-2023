@@ -18,6 +18,7 @@ RUN cd /etc/bind
 RUN dnssec-keygen -a RSASHA256 -b 1024 -n ZONE mmes-2.ephec-ti.be 
 RUN dnssec-keygen -a RSASHA256 -b 1024 -n ZONE -f KSK mmes-2.ephec-ti.be
 
+
 COPY named.conf /etc/bind/
 COPY mmes-2.ephec-ti.be /etc/bind/
 COPY reverse.lab /etc/bind/ 
