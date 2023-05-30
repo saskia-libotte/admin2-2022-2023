@@ -15,6 +15,8 @@ RUN apt install tcpdump -y
 COPY named.conf /etc/bind/
 COPY woodytoys.lab /etc/bind/
 COPY reverse.lab /etc/bind/
+COPY woodytoys_public /etc/bind/
+
 
 EXPOSE 53/udp 53/tcp
 CMD ["named", "-g"]
