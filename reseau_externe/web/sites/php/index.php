@@ -21,30 +21,39 @@
     </form>
 
     <?php
-    $servername = "192.168.0.3";
-    $username = "root123";
-    $password = "root123";
-    $dbname = "db";
-    mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
 
-    // Connect to the database
-    $conn = new MySQLi($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("The connection failed: " . $conn->connect_error);
-      }
-    $sql = 'SELECT * FROM cadeau';
-    $result = $conn->query($sql);
+        // Connexion à la base de données
+        $servername = "192.168.0.3";
+        $username = "root123";
+        $password = "root123";
+        $dbname = "db";
 
-    if ($result->num_rows > 0) {
-        echo "<table>";
-        echo "<tr><th>ID</th><th>Nom</th><th>Prix</th></tr>";
-        while($row = $result->fetch_assoc()) {
-          echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td></tr>";
+        $conn = new MySQLi($servername, $username, $password, $dbname);
+
+        // Vérification de la connexion
+        if ($conn->connect_error) {
+            die("The connection failed: " . $conn->connect_error);
+        }
+
+        // Récupération des données de la table "cadeau"
+        $sql = "SELECT * FROM cadeau";
+        $result = $conn->query($sql);
+
+        // Affichage des données dans un tableau HTML
+        if ($result->num_rows > 0) {
+            echo "<table>";
+            echo "<tr><th>ID</th><th>Nom</th><th>Prix</th></tr>";
+            while($row = $result->fetch_assoc()) {
+                echo "<tr><td>" . $row["id"] . "</td><td>" . $row["name"] . "</td><td>" . $row["price"] . "</td></tr>";
         }
         echo "</table>";
-      } else {
-        echo "0 résultats";
-      }
+        } else {
+            echo "0 résultats";
+        }
+
+        // Fermeture de la connexion
+        $conn->close();
+
 
     // Handle form submission for adding a toy
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nomDuProduit']) && isset($_POST['prixDuProduit']) && isset($_POST['quantiteDuProduit'])) {
@@ -59,7 +68,7 @@
             echo "<p class='error'>Ce jouet existe déjà !</p>";
         } else {
             // Insert new toy into the database
-            $insertSql = "INSERT INTO cadeau (id, price, name) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
+            $insertSql = "INSERT INTO cadeau (id, name, price) VALUES ('$nomProduit', $quantiteDuProduit, $prixDuProduit)";
             if ($conn->query($insertSql) === TRUE) {
                 echo "<p class='success'>Jouet ajouté avec succès !</p>";
                 // Refresh the page to update the id list
