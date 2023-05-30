@@ -108,4 +108,23 @@ services:
     container_name: web_public
     depends_on:
       - db
-      
+  
+  mail_public:
+    build: ./reseau_externe/mail_public
+    networks:
+      default:
+        ipv4_address: 192.168.0.11
+    ports: 
+      - "587:25"
+    container_name: mail_public
+    hostname: mail 
+    dns: 192.168.0.4
+
+  user_public:
+    build: ./reseau_externe/user1_public
+    networks:
+      default:
+        ipv4_address: 192.168.0.204
+    container_name: user_public
+    hostname: user_public
+    dns: 192.168.0.4
