@@ -106,25 +106,5 @@ services:
       - "80:80"
       - "443:443"
     container_name: web_public
-
-
-  # mail_public:
-  #   build: ./reseau_externe/mail
-  #   networks:
-  #     default:
-  #       ipv4_address: 192.168.0.11
-  #   container_name: mail_public
-  #   hostname: mail 
-  #   dns: 192.168.0.4
-  #   tty: true
-  #   environment:
-  #     - maildomain=mmes-2.ephec-ti.be
-
-  # simon_public:
-  #   build: ./reseau_externe/simon
-  #   networks:
-  #     default:
-  #       ipv4_address: 192.168.0.12
-  #   container_name: simon_public
-  #   hostname: simon_public
-  #   dns: 192.168.0.4
+    depends_on:
+      - db
