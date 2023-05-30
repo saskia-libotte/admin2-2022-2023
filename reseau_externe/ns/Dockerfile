@@ -1,6 +1,5 @@
 FROM ubuntu/bind9:latest
 
-
 RUN mkdir -p /var/log/named
 RUN apt update -y
 RUN apt install net-tools -y
