@@ -1,4 +1,4 @@
-FROM php:8.0-apache
+FROM php:7.4-apache
 
 RUN apt-get update && \
     apt-get install -y libzip-dev libicu-dev libonig-dev zlib1g-dev mariadb-client && \
@@ -25,5 +25,7 @@ RUN a2ensite b2b.conf
 COPY . /var/www/html
 COPY ./sites/html /var/www/html/site
 COPY ./sites/php /var/www/html/b2b
+
+
 
 EXPOSE 443
