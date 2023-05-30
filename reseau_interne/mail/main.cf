@@ -1,4 +1,4 @@
-myhostname = mail.woodytoys.conf
+myhostname = mail.woodytoys.lab
 mydomain = woodytoys.lab
 
 myorigin = $mydomain
