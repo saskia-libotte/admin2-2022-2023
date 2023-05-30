@@ -1,0 +1,11 @@
+set from="pauline@woodytoys.lab"
+set ssl_starttls=no
+set ssl_force_tls=no
+set smtp_url = "smtp://mail.woodytoys.lab:25"
+
+# Imap settings
+set spoolfile="imap://pauline@mail.woodytoys.lab/"
+set imap_user = "pauline@woodytoys.lab"
+set imap_pass = "pauline"
+set folder = "imap://pauline@mail.woodytoys.lab/"
+set editor = "nano"

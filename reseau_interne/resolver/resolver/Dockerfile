@@ -1,5 +1,7 @@
-FROM ubuntu:latest
+FROM ubuntu/bind9:latest
 
+
+RUN mkdir -p /var/log/named
 RUN apt update -y
 RUN apt install net-tools -y
 RUN apt install nano -y
@@ -8,13 +10,7 @@ RUN apt install traceroute -y
 RUN apt install dnsutils -y
 RUN apt install links -y
 RUN apt install tcpdump -y
-RUN apt install telnet -y
-RUN apt install mutt -y
+COPY named.conf /etc/bind/
+EXPOSE 53/udp 53/tcp
+CMD ["named", "-g"]
 
-RUN useradd -rm -p $(openssl passwd -1 simon) simon
-
-COPY .muttrc /home/simon/
-
-USER simon
-
-CMD ["bash"]

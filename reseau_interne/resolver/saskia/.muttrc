@@ -1,0 +1,10 @@
+set from="saskia@woodytoys.lab"
+set ssl_starttls=no
+set ssl_force_tls=no
+set smtp_url = "smtp://mail.woodytoys.lab:25"
+# Imap settings
+set spoolfile="imap://saskia@mail.woodytoys.lab/"
+set imap_user = "saskia@woodytoys.lab"
+set imap_pass = "saskia"
+set folder = "imap://saskia@mail.woodytoys.lab/"
+set editor = "nano"
