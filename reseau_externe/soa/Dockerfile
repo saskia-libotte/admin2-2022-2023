@@ -1,20 +1,10 @@
-FROM ubuntu/bind9:latest
+FROM ubuntu/bind9
 
+RUN apt update && apt upgrade -y
 
-RUN mkdir -p /var/log/named
-RUN apt update -y
-RUN apt install net-tools -y
-RUN apt install nano -y
-RUN apt install iputils-ping -y
-RUN apt install traceroute -y
-RUN apt install dnsutils -y
-RUN apt install traceroute -y
-RUN apt install links -y
-RUN apt install tcpdump -y
+WORKDIR /etc/bind
 
-COPY named.conf /etc/bind/
+COPY named.conf /etc/bind
 COPY mmes-2.ephec-ti.be.zone /etc/bind
 
-EXPOSE 53/tcp/udp
-
-CMD ["named"] ["mkdir", "-p", "/var/log/named/"]
+CMD ["named", "-g"]
