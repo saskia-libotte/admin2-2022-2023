@@ -12,7 +12,9 @@ COPY main.cf /etc/postfix/
 
 EXPOSE 25 143 110 587 993
 
-RUN useradd -rm -p $(openssl passwd -1 simon) simon
+RUN useradd -m -p simon simon
+RUN useradd -m -p pauline pauline
+RUN useradd -m -p saskia saskia
 
 ENTRYPOINT ["tail"] 
 CMD service postfix start && service dovecot start && tail -f /dev/null

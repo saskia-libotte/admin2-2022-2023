@@ -1,0 +1,12 @@
+set from="pauline@mmes-2.ephec-ti.be"
+set ssl_starttls=no
+set ssl_force_tls=no
+set smtp_url = "smtp://mail.mmes-2.ephec-ti.be:25"
+
+# Imap settings
+set spoolfile="imap://pauline@mail.mmes-2.ephec-ti.be/"
+set imap_user = "pauline@mmes-2.ephec-ti.be"
+set imap_pass = "pauline"
+set folder = "imap://pauline@mail.mmes-2.ephec-ti.be/"
+
+set editor = "nano"
