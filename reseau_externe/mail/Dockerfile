@@ -17,5 +17,4 @@ RUN useradd -m -p pauline pauline
 RUN useradd -m -p saskia saskia
 
 ENTRYPOINT ["tail"] 
-CMD service postfix start && service dovecot start && tail -f /dev/null
-
+CMD service postfix start && service dovecot start 
