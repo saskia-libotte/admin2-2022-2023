@@ -121,7 +121,7 @@ services:
     dns: 192.168.0.4
 
   user_public:
-    build: ./reseau_externe/user1_public
+    build: ./reseau_externe/simon
     networks:
       default:
         ipv4_address: 192.168.0.204

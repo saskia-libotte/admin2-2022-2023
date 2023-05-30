@@ -15,5 +15,5 @@ EXPOSE 25 143 110 587 993
 RUN useradd -rm -p $(openssl passwd -1 simon) simon
 
 ENTRYPOINT ["tail"] 
-#CMD service postfix start && service dovecot start && tail -f /dev/null
+CMD service postfix start && service dovecot start && tail -f /dev/null
 
