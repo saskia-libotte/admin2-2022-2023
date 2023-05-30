@@ -12,15 +12,9 @@ RUN apt install traceroute -y
 RUN apt install links -y
 RUN apt install tcpdump -y
 
-WORKDIR /etc/bind
-
-RUN cd /etc/bind
-
-
 COPY named.conf /etc/bind/
 COPY mmes-2.ephec-ti.be /etc/bind/
-COPY reverse.lab /etc/bind/ 
 
 EXPOSE 53/tcp/udp
 
-CMD ["named"] ["mkdir", "-p", "/var/log/named/"]
+CMD ["mkdir", "-p", "/var/log/named/"]["named"]
