@@ -4,6 +4,7 @@ FROM ubuntu:latest
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends apt-utils
 RUN apt-get install -y postfix
+RUN apt-get install -y dovecot
 RUN apt-get install -y systemctl
 RUN apt-get install -y mailutils
 RUN apt-get install -y iputils-ping
