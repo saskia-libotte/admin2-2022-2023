@@ -18,15 +18,12 @@ RUN apt install tcpdump -y
 COPY apache2.conf /etc/apache2/sites-available/apache2.conf
 COPY b2b.conf /etc/apache2/sites-available/b2b.conf
 
-#COPY certificate.crt /etc/ssl/certs/
-#COPY private.key /etc/ssl/certs/
-#COPY ca_bundle.crt /etc/ssl/certs/
 
 RUN a2ensite apache2.conf
 RUN a2ensite b2b.conf
 
 COPY . /var/www/html
-COPY ./html /var/www/html/html
-COPY ./php /var/www/html/php
+COPY ./sites/html /var/www/html/site
+COPY ./sites/php /var/www/html/b2b
 
 EXPOSE 443

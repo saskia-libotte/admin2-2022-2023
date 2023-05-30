@@ -1,15 +1,20 @@
 myhostname = mail.mmes-2.ephec-ti.be
-mydomain = ns.mmes-2.ephec-ti.be
+mydomain = mmes-2.ephec-ti.be
+
 myorigin = $mydomain
-# Accepting local mail delivery for those destinations
+
+inet_interfaces = all
+
+inet_protocols = all
+
 mydestination = $myhostname localhost.$mydomain localhost $mydomain
 home_mailbox = Maildir/
+mynetworks = 192.168.0.0/16 127.0.0.0/8 [::1]/128 
+
 smtpd_banner = $myhostname ESMTP $mail_name
 
-# Network from which we accept smtp connexions
-mynetworks = 192.168.0.0/16 127.0.0.0/8 [::1]/128
-smtpd_relay_restrictions = permit_mynetworks, permit_sasl_authenticated, reject
+
+smtpd_relay_restrictions = permit_mynetworks, reject
 
 maillog_file=/var/log/postfix.log
 
-inet_interfaces = all
