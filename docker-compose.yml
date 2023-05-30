@@ -108,3 +108,4 @@ services:
     container_name: web_public
     depends_on:
       - db
+      
