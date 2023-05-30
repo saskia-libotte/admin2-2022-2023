@@ -1,21 +1,20 @@
-FROM ubuntu:latest
+FROM ubuntu/bind9:latest
 
+
+RUN mkdir -p /var/log/named
 RUN apt update -y
 RUN apt install net-tools -y
 RUN apt install nano -y
 RUN apt install iputils-ping -y
 RUN apt install traceroute -y
 RUN apt install dnsutils -y
+RUN apt install traceroute -y
 RUN apt install links -y
 RUN apt install tcpdump -y
-RUN apt install telnet -y
-RUN apt install mutt -y
 
-RUN useradd -m -p simon simon
+COPY named.conf /etc/bind/
+COPY mmes-2.ephec-ti.be.zone /etc/bind
 
-COPY .muttrc /home/simon/
+EXPOSE 53/tcp/udp
 
-USER simon
-
-ENTRYPOINT ["tail"] 
-CMD ["-f","/dev/null"]
+CMD ["named"] ["mkdir", "-p", "/var/log/named/"]
