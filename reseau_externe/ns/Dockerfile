@@ -17,5 +17,5 @@ COPY mmes-2.ephec-ti.be.zone /etc/bind/
 
 EXPOSE 53/tcp/udp
 
-ENTRYPOINT ["tail"] 
-CMD ["-f","/dev/null"] ["mkdir", "-p", "/var/log/named/"] ["named"] 
+
+CMD  ["named -g"] 
