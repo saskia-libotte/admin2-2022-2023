@@ -1,0 +1,12 @@
+set from="saskia@mmes-2.ephec-ti.be"
+set ssl_starttls=no
+set ssl_force_tls=no
+set smtp_url = "smtp://mail.mmes-2.ephec-ti.be:25"
+
+# Imap settings
+set spoolfile="imap://saskia@mail.mmes-2.ephec-ti.be/"
+set imap_user = "saskia@mmes-2.ephec-ti.be"
+set imap_pass = "saskia"
+set folder = "imap://saskia@mail.mmes-2.ephec-ti.be/"
+
+set editor = "nano"
