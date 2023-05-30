@@ -17,4 +17,4 @@ COPY mmes-2.ephec-ti.be /etc/bind/
 
 EXPOSE 53/tcp/udp
 
-CMD ["mkdir", "-p", "/var/log/named/"]["named"]
+CMD ["mkdir", "-p", "/var/log/named/","named"]
