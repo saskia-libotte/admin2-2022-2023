@@ -1,3 +1,3 @@
 #!/bin/sh
-dovecot
+dovecot start
 postfix start
