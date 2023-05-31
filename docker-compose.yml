@@ -120,7 +120,7 @@ services:
       - "143:143"
     container_name: mail_public
     hostname: mail 
-    dns: 192.168.0.4
+    dns: 192.168.0.9
 
   simon_public:
     build: ./reseau_externe/simon
@@ -129,7 +129,7 @@ services:
         ipv4_address: 192.168.0.204
     container_name: simon_public
     hostname: simon_public
-    dns: 192.168.0.4
+    dns: 192.168.0.9
 
   pauline_public:
     build: ./reseau_externe/pauline
@@ -138,7 +138,7 @@ services:
         ipv4_address: 192.168.0.205
     container_name: pauline_public
     hostname: pauline_public
-    dns: 192.168.0.4
+    dns: 192.168.0.9
 
   saskia_public:
     build: ./reseau_externe/saskia
@@ -147,4 +147,4 @@ services:
         ipv4_address: 192.168.0.206
     container_name: saskia_public
     hostname: saskia_public
-    dns: 192.168.0.4
+    dns: 192.168.0.9
