@@ -7,7 +7,6 @@ RUN apt install dnsutils -y
 RUN apt install telnet postfix -y
 
 COPY main.cf /etc/postfix/
-COPY dovecot.conf /etc/dovecot/
 COPY start.sh ./
 
 RUN chmod 111 start.sh
