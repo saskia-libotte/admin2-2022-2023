@@ -117,7 +117,7 @@ services:
     ports: 
       - "587:25"
       - "110:110"
-      - "143-143"
+      - "143:143"
     container_name: mail_public
     hostname: mail 
     dns: 192.168.0.4
