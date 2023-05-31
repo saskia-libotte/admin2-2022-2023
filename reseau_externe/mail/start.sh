@@ -1,3 +1,3 @@
-#!/bin/sh
-dovecot start
-postfix start
+# #!/bin/sh
+# dovecot
+# postfix start
