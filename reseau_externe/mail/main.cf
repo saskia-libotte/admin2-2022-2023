@@ -8,6 +8,7 @@ myorigin = $mydomain
 # Accepting local mail delivery for those destinations
 mydestination = $myhostname localhost.$mydomain localhost $mydomain
 
+
 smtpd_banner = $myhostname ESMTP $mail_name
 
 # Network from which we accept smtp connexions
@@ -17,6 +18,9 @@ smtpd_relay_restrictions = permit_mynetworks, reject
 
 
 maillog_file=/var/log/postfix.log
+inet_protocols = all
+smtpd_port = 587 
 
-#inet_interfaces = all
-#inet_protocols = all
+nilter_protocol = 6
+
+
