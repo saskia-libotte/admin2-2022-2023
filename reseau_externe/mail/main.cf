@@ -1,10 +1,6 @@
 # Define server identity
 myhostname = mail.mmes-2.ephec-ti.be
 mydomain = mmes-2.ephec-ti.be
-biff = no
-append_dot_mydomain = no
-readme_directory = no
-compatibility_level = 2
 
 # Outgoing mail must use this as source address domain
 myorigin = $mydomain
@@ -24,11 +20,6 @@ smtpd_relay_restrictions = permit_mynetworks, reject
 maillog_file=/var/log/postfix.log
 inet_protocols = all
 smtpd_port = 587 
-relayhost = 
-recipient_delimiter = +
-inet_interfaces = all
-inet_protocols = all
-maillog_file=/var/log/mail.log
 
 nilter_protocol = 6
 
