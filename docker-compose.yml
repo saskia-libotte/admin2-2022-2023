@@ -93,8 +93,8 @@ services:
       default:
         ipv4_address: 192.168.0.9
     ports:
-      - "53:53/tcp"
-      - "53:53/udp"
+      - "54.38.240.198:53:53/tcp"
+      - "54.38.240.198:53:53/udp"
     container_name: ns_public
 
   web_public:
