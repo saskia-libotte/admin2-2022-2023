@@ -17,6 +17,7 @@ smtpd_relay_restrictions = permit_mynetworks, reject
 
 
 maillog_file=/var/log/postfix.log
+smtpd_port = 587 
 
 #inet_interfaces = all
 #inet_protocols = all
