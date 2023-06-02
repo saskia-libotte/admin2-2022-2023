@@ -9,7 +9,7 @@ $TTL 86400
 ; NS configs
 
             IN      NS      ns.mmes-2.ephec-ti.be.
-            IN      MX  10  mail
+            IN      MX  10  mail.mmes-2.ephec-ti.be.
 ns          IN      A       54.38.240.198
 
 ; Web
@@ -20,9 +20,8 @@ b2b         IN    A    54.38.240.198
 ; Mail
 mail        IN    A    54.38.240.198
 smtp        IN      CNAME   mail
-pop	      IN	  CNAME   mail
-imap	      IN      CNAME   mail
-
+pop	        IN	    CNAME   mail
+imap	    IN      CNAME   mail
 
 ;secu SPF
 mmes-2.ephec-ti.be.   IN   TXT   "v=spf1 ip4:54.38.240.198 -all"
