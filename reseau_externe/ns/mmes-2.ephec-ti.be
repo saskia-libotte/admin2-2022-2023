@@ -6,13 +6,20 @@ $TTL 86400
                     3600       ; retry after 1 hour
                     604800     ; expire after 1 week
                     86400 )    ; minimum TTL of 1 day
+; NS configs
 
-      IN    NS    ns.mmes-2.ephec-ti.be.
+            IN      NS      ns.mmes-2.ephec-ti.be.
+            IN      MX  10  mail
+ns          IN      A       54.38.240.198
 
-      IN    MX    10    mail.mmes-2.ephec-ti.be.
+; Web
 
-ns          IN    A    54.38.240.198
 www         IN    A    54.38.240.198
 b2b         IN    A    54.38.240.198
+
+; Mail
 mail        IN    A    54.38.240.198
+smtp        IN      CNAME   mail
+pop	      IN	  CNAME   mail
+imap	      IN      CNAME   mail
 
