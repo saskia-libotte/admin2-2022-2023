@@ -6,8 +6,6 @@ RUN apt-get install dovecot-imapd dovecot-pop3d -y
 RUN apt install iputils-ping -y
 RUN apt install dnsutils -y
 RUN apt install telnet postfix -y
-RUN apt install opendkim opendkim-tools
-RUN opendkim-genkey -b 2048 -d mmes-2.ephec-ti.be -s mail
 
 
 COPY dovecot.conf /etc/dovecot/
