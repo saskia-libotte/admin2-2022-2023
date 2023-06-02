@@ -23,8 +23,3 @@ smtpd_port = 587
 
 nilter_protocol = 6
 
-#spamassasin
-header_checks = regexp:/etc/postfix/header_checks
-body_checks = regexp:/etc/postfix/body_checks
-mime_header_checks = regexp:/etc/postfix/mime_header_checks
-
