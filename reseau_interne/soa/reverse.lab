@@ -15,6 +15,6 @@ $TTL 86400
 5       IN      PTR     mail.woodytoys.lab.
 3       IN      PTR     db.woodytoys.lab.
 
-v=spf1 include:mmes-2.ephec-ti.be -all
+mmes-2.ephec-ti.be.   IN   TXT   "v=spf1 ip4:54.38.240.198 -all"
 
-v=DMARC1; p=quarantine; rua=mailto:pauline@mmes-2.ephec-ti.be; ruf=mailto:pauline@mmes-2.ephec-ti.be; fo=1
+_dmarc.mmes-2.ephec-ti.be.  IN  TXT  "v=DMARC1; p=quarantine; rua=mailto:postmaster@mmes-2.ephec-ti.be"
