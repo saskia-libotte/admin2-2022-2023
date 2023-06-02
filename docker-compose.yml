@@ -115,7 +115,10 @@ services:
       default:
         ipv4_address: 192.168.0.11
     ports: 
+      - "587:587"
+      - "993:993"
       - "587:25"
+      - "995:995"
       - "110:110"
       - "143:143"
     container_name: mail_public
