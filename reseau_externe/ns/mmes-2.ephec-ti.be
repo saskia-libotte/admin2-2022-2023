@@ -16,6 +16,3 @@ www         IN    A    54.38.240.198
 b2b         IN    A    54.38.240.198
 mail        IN    A    54.38.240.198
 
-mmes-2.ephec-ti.be.   IN   TXT   "v=spf1 ip4:54.38.240.198  ip6:2001:41d0:305:2100:0:0:0:5a2  -all"
-
-_dmarc.mmes-2.ephec-ti.be.  IN  TXT  "v=DMARC1; p=quarantine; rua=mailto:postmaster@mmes-2.ephec-ti.be"
