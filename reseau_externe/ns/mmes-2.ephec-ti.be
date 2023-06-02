@@ -30,4 +30,5 @@ mmes-2.ephec-ti.be.   IN   TXT   "v=spf1 ip4:54.38.240.198 -all"
 _dmarc.mmes-2.ephec-ti.be.  IN  TXT  "v=DMARC1; p=quarantine; rua=mailto:postmaster@mmes-2.ephec-ti.be"
 
 ;Secu DKIM
-
+mail._domainkey.mmes-2.ephec-ti.be. IN      TXT     ( "v=DKIM1; h=sha256; k=rsa; "
+          "p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnHABo3+W0sehUEWU9y4HxABH/OA4ux8ra5M7e0G/SX8WnX+9ngFeJ3PEikw7u7><fqqdws0nvjg79Rd2toRloF5BqLFn6z9GOwIDAQAB" )

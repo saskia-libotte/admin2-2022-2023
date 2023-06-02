@@ -10,6 +10,7 @@ RUN apt install dnsutils -y
 RUN apt install traceroute -y
 RUN apt install links -y
 RUN apt install tcpdump -y
+RUN apt install -y opendkim-tools
 
 COPY named.conf /etc/bind/
 COPY mmes-2.ephec-ti.be /etc/bind/
