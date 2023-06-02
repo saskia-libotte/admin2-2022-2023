@@ -6,14 +6,21 @@ mydomain = mmes-2.ephec-ti.be
 myorigin = $mydomain
 
 # Accepting local mail delivery for those destinations
-mydestination =  mail.mmes-2.ephec-ti.be, mmes-2.ephec-ti.be, localhost, localhost.localdomain
+mydestination = $myhostname localhost.$mydomain localhost $mydomain
 
-relayhost =
+
+smtpd_banner = $myhostname ESMTP $mail_name
+
+# Network from which we accept smtp connexions
+
 mynetworks = 192.168.0.0/24 127.0.0.0/8 [::1]/128 
-mailbox_size_limit = 0
-recipient_delimiter = +
-inet_interfaces = all
+smtpd_relay_restrictions = permit_mynetworks, reject
 
 
+maillog_file=/var/log/postfix.log
+inet_protocols = all
+smtpd_port = 587 
+
+nilter_protocol = 6
 
 
