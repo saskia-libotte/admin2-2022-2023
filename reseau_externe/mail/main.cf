@@ -11,10 +11,11 @@ mydestination = $myhostname localhost.$mydomain localhost $mydomain
 
 smtpd_banner = $myhostname ESMTP $mail_name
 
+
 # Network from which we accept smtp connexions
 
-mynetworks = 192.168.0.0/24 127.0.0.0/8 [::1]/128 
-smtpd_relay_restrictions = permit_mynetworks, reject
+mynetworks = 192.168.0.0/24 127.0.0.0/8 [::1]/128, 54.38.240.198/32
+smtpd_relay_restrictions = permit_mynetworks
 
 
 maillog_file=/var/log/postfix.log
