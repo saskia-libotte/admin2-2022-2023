@@ -23,3 +23,7 @@ smtp        IN      CNAME   mail
 pop	      IN	  CNAME   mail
 imap	      IN      CNAME   mail
 
+mmes-2.ephec-ti.be.   IN   TXT   "v=spf1 ip4:54.38.240.198 -all"
+
+_dmarc.mmes-2.ephec-ti.be.  IN  TXT  "v=DMARC1; p=quarantine; rua=mailto:postmaster@mmes-2.ephec-ti.be"
+
