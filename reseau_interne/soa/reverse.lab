@@ -14,3 +14,5 @@ $TTL 86400
 2       IN      PTR     www.woodytoys.lab.
 5       IN      PTR     mail.woodytoys.lab.
 3       IN      PTR     db.woodytoys.lab.
+
+v=DMARC1; p=quarantine; rua=mailto:pauline@mmes-2.ephec-ti.be; ruf=mailto:pauline@mmes-2.ephec-ti.be; fo=1
